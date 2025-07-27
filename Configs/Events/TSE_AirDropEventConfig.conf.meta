@@ -1,0 +1,9 @@
+MetaFileClass {
+ Name "TSE_AirDropEventConfig"
+ Configurations {
+  ResourceManagerSettings "{65E92D98348C0005}" {
+   Path "TSE_AirDropEventConfig.conf"
+   TypeName "TSE_AirDropEventConfig"
+  }
+ }
+} 

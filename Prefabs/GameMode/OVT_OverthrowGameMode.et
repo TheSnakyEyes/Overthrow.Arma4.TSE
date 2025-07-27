@@ -373,6 +373,8 @@ OVT_OverthrowGameMode {
   }
   SCR_VotingManagerComponent "{5EE26402B4C7BB47}" {
   }
+  TSE_AirDropEventManagerComponent "{65E92D98348C0006}" {
+  }
   TSE_CivDriversManagerComponent "{65F6982892CE48E4}" {
    m_VehicleConfig TSE_CarArrayConfig "{65F698123456ABCD}" : "{49D25A2BC48553B1}Configs/Events/TSE_CIvCarList.conf" {
    }
@@ -393,13 +395,13 @@ OVT_OverthrowGameMode {
    }
    m_ConvoyConfig TSE_ConvoyEventConfig "{65E92D98348C0003}" {
     m_sEventName "Convoy Event"
-    m_iSpawnChance 65
+    m_iSpawnChance 55
     m_iMinIntervalHours 12
     m_iMaxIntervalHours 32
     m_iDurationHours 8
     m_iPriority 2
     m_bEnabled 1
-    m_bAllowSimultaneous 0
+    m_bAllowSimultaneous 1
     m_iMinGameTimeHours 0
     m_iMaxGameTimeHours 999999
     m_CargoConfig TSE_ConvoyCargoConfig "{5EB46557DF2AA252}" : "{5EB46557DF2AA250}Configs/Events/TSE_ConvoyCargoConfig.conf" {
@@ -423,6 +425,16 @@ OVT_OverthrowGameMode {
     }
     m_fCleanupRadius 100
     m_fMonitoringInterval 900
+   }
+   m_AirDropConfig TSE_AirDropEventConfig "{65E92D98348C0005}" {
+    m_sEventName "AirDrop Event"
+    m_iSpawnChance 100
+    m_iPriority 12
+    m_bAllowSimultaneous 1
+    m_CargoConfig TSE_AirDropCargoConfig "{65F7246BDA6BE6B0}" {
+     m_iWeaponsChance 100
+     m_iAmmunitionChance 100
+    }
    }
   }
   TSE_PlayerKillMortarEffect "{65E92D98348B7FFC}" {

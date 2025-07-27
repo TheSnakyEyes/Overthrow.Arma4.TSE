@@ -1,0 +1,181 @@
+$grp OVT_VehiclePatrolSpawn : "{047EABA6E372965E}Prefabs/GameMode/TSE_AirDropEventSpawn.et" {
+ {
+  coords 9186.444 250.974 3824.769
+  angleX 13.767
+  angleY -1.974
+  angleZ -8.243
+ }
+ {
+  coords 8531.138 279.122 4347.673
+  angleX 3.521
+  angleY -0.441
+  angleZ -7.139
+ }
+ {
+  coords 8719.193 313.043 1716.704
+  angleX 4.466
+  angleY -0.07
+  angleZ -0.898
+ }
+ {
+  coords 9770.071 107.832 645.641
+  angleX 17.25
+  angleY -1.39
+  angleZ -4.678
+ }
+ {
+  coords 9124.052 35.706 4988.855
+  angleX 1.739
+  angleY 0.299
+  angleZ 9.757
+ }
+ {
+  coords 9691.661 28.839 4359.731
+  angleX -4.414
+  angleY -0.484
+  angleZ 6.261
+ }
+ {
+  coords 10035.158 30.542 3849.688
+  angleX -10.201
+  angleY -2.095
+  angleZ 11.669
+ }
+ {
+  coords 10154.886 16.579 3250.387
+  angleX -5.174
+  angleY -0.973
+  angleZ 10.664
+ }
+ {
+  coords 10714.202 28.652 2929.951
+  angleX 1.789
+  angleY 0.028
+  angleZ 0.896
+ }
+ {
+  coords 11060.882 1.294 2914.687
+  angleX -1.788
+  angleY -0.056
+  angleZ 1.791
+ }
+ {
+  coords 11961.874 0.845 1748.075
+  angleX 0.895
+  angleY 0
+ }
+ {
+  coords 10385.294 3.2 625.534
+  angleX -3.534
+  angleY -0.387
+  angleZ 6.254
+ }
+ {
+  coords 6051.875 4.554 3378.529
+  angleX 1.786
+  angleY 0.084
+  angleZ 2.685
+ }
+ {
+  coords 6166.71 98.774 4880.136
+  angleX 7.082
+  angleY 0.556
+  angleZ 4.502
+ }
+ {
+  coords 5611.76 87.128 5056.5
+  angleX 5.323
+  angleY 0.417
+  angleZ 4.486
+ }
+ {
+  coords 5464.504 92.192 4878.909
+  angleX -7.91
+  angleY -0.871
+  angleZ 6.302
+ }
+ {
+  coords 5215.645 125.731 4702.723
+  angleX -7.997
+  angleY 0.252
+  angleZ -1.808
+ }
+ {
+  coords 3570.674 63.841 3970.994
+  angleX 8.42
+  angleY 1.988
+  angleZ 13.337
+ }
+ {
+  coords 1773.259 56.608 4969.81
+  angleX 4.339
+  angleY -0.747
+  angleZ -9.781
+ }
+ {
+  coords 3475.75 179.379 5841.751
+  angleX -7.882
+  angleY 0.992
+  angleZ -7.193
+ }
+ {
+  coords 3799.611 134.771 6036.227
+  angleX -5.293
+  angleY -0.581
+  angleZ 6.269
+ }
+ {
+  coords 3741.635 70.826 6872.847
+  angleX -7.123
+  angleY 0.112
+  angleZ -0.902
+ }
+ {
+  coords 4235.003 117.706 6953.533
+  angleX -7.776
+  angleY 1.345
+  angleZ -9.844
+ }
+ {
+  coords 5146.67 129.816 6694.331
+  angleX 14.649
+  angleY 1.872
+  angleZ 7.366
+ }
+ {
+  coords 5875.279 148.005 6313.108
+  angleX -1.788
+  angleY 0.056
+  angleZ -1.791
+ }
+ {
+  coords 6146.457 208.622 7149.616
+  angleX 0.892
+  angleY 0.056
+  angleZ 3.577
+ }
+ {
+  coords 7567.552 0.938 8976.452
+  angleX 3.562
+  angleY -0.223
+  angleZ -3.583
+ }
+ {
+  coords 4343.305 29.53 9996.618
+  angleX 1.789
+  angleY 0.028
+  angleZ 0.896
+ }
+ {
+  coords 2435.293 64.494 7160.976
+  angleX -0.894
+  angleY 0.028
+  angleZ -1.79
+ }
+ {
+  coords 3627.985 124.317 6218.261
+  angleX -5.293
+  angleY 0.581
+  angleZ -6.269
+ }
+}

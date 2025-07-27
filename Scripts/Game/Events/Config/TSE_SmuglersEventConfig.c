@@ -20,4 +20,22 @@ class TSE_SmuglersEventConfig : TSE_BaseEventConfig
         m_iPriority = 1;
         m_bAllowSimultaneous = true;
     }
+    
+    // Load configuration from file
+    static TSE_SmuglersEventConfig LoadConfig()
+    {
+        Resource configResource = Resource.Load("{AA7A1AF2D2C1C5E1}Configs/Events/TSE_SmuglersEventConfig.conf");
+        if (configResource && configResource.IsValid())
+        {
+            TSE_SmuglersEventConfig config = TSE_SmuglersEventConfig.Cast(BaseContainerTools.CreateInstanceFromContainer(configResource.GetResource().ToBaseContainer()));
+            if (config)
+            {
+                Print("[SmuglersEvent] Configuration loaded from file");
+                return config;
+            }
+        }
+        
+        Print("[SmuglersEvent] Using default configuration");
+        return new TSE_SmuglersEventConfig();
+    }
 } 

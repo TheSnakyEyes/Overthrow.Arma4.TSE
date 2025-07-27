@@ -47,11 +47,8 @@ class TSE_ConvoyEventManagerComponent : ScriptComponent
         Print("[ConvoyEvent] OnPostInit: " + owner.GetName() + " | m_bEventActive=" + m_bEventActive);
         
         // Note: Event Manager will call StartEventFromManager instead of self-starting
-        // Legacy behavior kept for backward compatibility
-        if (!m_bManagedByEventManager)
-        {
-            GetGame().GetCallqueue().CallLater(WaitForGameModeInitialized, 1000, false);
-        }
+        // Legacy behavior disabled to prevent conflicts with central EventManager
+        Print("[ConvoyEvent] Waiting for central EventManager to start events");
     }
 
     void WaitForGameModeInitialized()

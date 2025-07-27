@@ -44,12 +44,8 @@ class TSE_SmuglersEventManagerComponent : ScriptComponent
         Print("[SmuglersEvent] OnPostInit: " + owner.GetName() + " | m_bEventActive=" + m_bEventActive);
         
         // Note: Event Manager will call StartEventFromManager instead of self-starting
-        // Legacy behavior kept for backward compatibility
-        if (!m_bManagedByEventManager)
-        {
-            // Запускаем проверку готовности гейммода
-            GetGame().GetCallqueue().CallLater(WaitForGameModeInitialized, 1000, false);
-        }
+        // Legacy behavior disabled to prevent conflicts with central EventManager
+        Print("[SmuglersEvent] Waiting for central EventManager to start events");
     }
 
     void WaitForGameModeInitialized()

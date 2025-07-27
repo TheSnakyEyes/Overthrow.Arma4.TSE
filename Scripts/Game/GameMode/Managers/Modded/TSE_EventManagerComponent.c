@@ -29,6 +29,9 @@ class TSE_EventManagerComponent : OVT_Component
     [Attribute("", UIWidgets.Object, desc: "Smugglers Event Configuration")]
     ref TSE_SmuglersEventConfig m_SmuglersConfig;
     
+    [Attribute("", UIWidgets.Object, desc: "Air Drop Event Configuration")]
+    ref TSE_AirDropEventConfig m_AirDropConfig;
+    
     // Event system state
     protected ref array<ref TSE_ActiveEvent> m_ActiveEvents;
     protected float m_fLastEventTime;
@@ -38,6 +41,7 @@ class TSE_EventManagerComponent : OVT_Component
     // Component references
     protected TSE_ConvoyEventManagerComponent m_ConvoyEventComponent;
     protected TSE_SmuglersEventManagerComponent m_SmuglersEventComponent;
+    protected TSE_AirDropEventManagerComponent m_AirDropEventComponent;
     
     override void OnPostInit(IEntity owner)
     {
@@ -46,13 +50,15 @@ class TSE_EventManagerComponent : OVT_Component
         if (!Replication.IsServer())
             return;
             
-        // Initialize default configs if not set
+        // Load configs from files or create defaults
         if (!m_ManagerConfig)
-            m_ManagerConfig = new TSE_EventManagerConfig();
+            m_ManagerConfig = TSE_EventManagerConfig.LoadConfig();
         if (!m_ConvoyConfig)
-            m_ConvoyConfig = new TSE_ConvoyEventConfig();
+            m_ConvoyConfig = TSE_ConvoyEventConfig.LoadConfig();
         if (!m_SmuglersConfig)
-            m_SmuglersConfig = new TSE_SmuglersEventConfig();
+            m_SmuglersConfig = TSE_SmuglersEventConfig.LoadConfig();
+        if (!m_AirDropConfig)
+            m_AirDropConfig = TSE_AirDropEventConfig.LoadConfig();
             
         m_ActiveEvents = new array<ref TSE_ActiveEvent>();
         m_fLastEventTime = 0;
@@ -77,11 +83,14 @@ class TSE_EventManagerComponent : OVT_Component
         // Find event components
         m_ConvoyEventComponent = TSE_ConvoyEventManagerComponent.Cast(gameMode.FindComponent(TSE_ConvoyEventManagerComponent));
         m_SmuglersEventComponent = TSE_SmuglersEventManagerComponent.Cast(gameMode.FindComponent(TSE_SmuglersEventManagerComponent));
+        m_AirDropEventComponent = TSE_AirDropEventManagerComponent.Cast(gameMode.FindComponent(TSE_AirDropEventManagerComponent));
         
         if (!m_ConvoyEventComponent)
             LogEventManager("WARNING: ConvoyEventManagerComponent not found!");
         if (!m_SmuglersEventComponent)
             LogEventManager("WARNING: SmuglersEventManagerComponent not found!");
+        if (!m_AirDropEventComponent)
+            LogEventManager("WARNING: AirDropEventManagerComponent not found!");
             
         m_bInitialized = true;
         
@@ -109,10 +118,22 @@ class TSE_EventManagerComponent : OVT_Component
     
     void CheckForNewEvents()
     {
-        if (!m_bInitialized || !m_ManagerConfig.m_bEventSystemEnabled)
+        LogEventManager("CheckForNewEvents called");
+        
+        if (!m_bInitialized)
+        {
+            LogEventManager("Event Manager not initialized yet");
             return;
+        }
+        
+        if (!m_ManagerConfig.m_bEventSystemEnabled)
+        {
+            LogEventManager("Event system disabled in config");
+            return;
+        }
             
         float currentTime = GetGame().GetWorld().GetWorldTime();
+        LogEventManager("Current time: " + currentTime + ", Last event time: " + m_fLastEventTime);
         
         // Clean up finished events
         CleanupFinishedEvents();
@@ -120,7 +141,8 @@ class TSE_EventManagerComponent : OVT_Component
         // Check global cooldown
         if (currentTime - m_fLastEventTime < m_ManagerConfig.m_iMinGlobalCooldown * 3600)
         {
-            LogEventManager("Global cooldown active, skipping event check");
+            float remaining = (m_ManagerConfig.m_iMinGlobalCooldown * 3600) - (currentTime - m_fLastEventTime);
+            LogEventManager("Global cooldown active, " + remaining/3600 + " hours remaining");
             return;
         }
         
@@ -131,17 +153,89 @@ class TSE_EventManagerComponent : OVT_Component
             return;
         }
         
-        // Try to start events based on priority and conditions
-        TryStartEvent("convoy", m_ConvoyConfig);
-        TryStartEvent("smugglers", m_SmuglersConfig);
+        LogEventManager("Event check passed, attempting to start events...");
+        
+        // Try to start events based on priority and conditions (lower number = higher priority)
+        // Create array of events with their configs and sort by priority
+        array<ref array<string>> eventPriorityList = new array<ref array<string>>();
+        
+        if (m_AirDropConfig && m_AirDropConfig.m_bEnabled)
+        {
+            array<string> airdropData = {"airdrop", m_AirDropConfig.m_iPriority.ToString()};
+            eventPriorityList.Insert(airdropData);
+        }
+        if (m_ConvoyConfig && m_ConvoyConfig.m_bEnabled)
+        {
+            array<string> convoyData = {"convoy", m_ConvoyConfig.m_iPriority.ToString()};
+            eventPriorityList.Insert(convoyData);
+        }
+        if (m_SmuglersConfig && m_SmuglersConfig.m_bEnabled)
+        {
+            array<string> smugglersData = {"smugglers", m_SmuglersConfig.m_iPriority.ToString()};
+            eventPriorityList.Insert(smugglersData);
+        }
+        
+        // Sort by priority (lower number = higher priority)
+        for (int i = 0; i < eventPriorityList.Count() - 1; i++)
+        {
+            for (int j = i + 1; j < eventPriorityList.Count(); j++)
+            {
+                int priority_i = eventPriorityList[i][1].ToInt();
+                int priority_j = eventPriorityList[j][1].ToInt();
+                if (priority_i > priority_j)
+                {
+                    // Swap elements
+                    array<string> temp = eventPriorityList[i];
+                    eventPriorityList[i] = eventPriorityList[j];
+                    eventPriorityList[j] = temp;
+                }
+            }
+        }
+        
+        // Try to start events in priority order
+        foreach (array<string> eventData : eventPriorityList)
+        {
+            string eventType = eventData[0];
+            TSE_BaseEventConfig config;
+            
+            if (eventType == "airdrop")
+                config = m_AirDropConfig;
+            else if (eventType == "convoy")
+                config = m_ConvoyConfig;
+            else if (eventType == "smugglers")
+                config = m_SmuglersConfig;
+                
+            if (config)
+            {
+                TryStartEvent(eventType, config);
+                
+                // If event started successfully, stop trying others for this cycle
+                if (IsEventTypeActive(eventType))
+                {
+                    LogEventManager("Started " + eventType + " event (priority " + eventData[1] + "), skipping lower priority events this cycle");
+                    break;
+                }
+            }
+        }
         
         m_fLastCheckTime = currentTime;
     }
     
     void TryStartEvent(string eventType, TSE_BaseEventConfig config)
     {
-        if (!config || !config.m_bEnabled)
+        LogEventManager("TryStartEvent called for: " + eventType);
+        
+        if (!config)
+        {
+            LogEventManager(eventType + " config is null");
             return;
+        }
+        
+        if (!config.m_bEnabled)
+        {
+            LogEventManager(eventType + " event disabled in config");
+            return;
+        }
             
         // Check if event is already running (for non-simultaneous events)
         if (!config.m_bAllowSimultaneous && IsEventTypeActive(eventType))
@@ -152,6 +246,7 @@ class TSE_EventManagerComponent : OVT_Component
         
         // Check game time constraints
         float gameTimeHours = GetGameTimeHours();
+        LogEventManager(eventType + " game time check: " + gameTimeHours + " hours (constraints: " + config.m_iMinGameTimeHours + "-" + config.m_iMaxGameTimeHours + ")");
         if (gameTimeHours < config.m_iMinGameTimeHours || gameTimeHours > config.m_iMaxGameTimeHours)
         {
             LogEventManager(eventType + " event outside time constraints");
@@ -160,6 +255,7 @@ class TSE_EventManagerComponent : OVT_Component
         
         // Roll for spawn chance
         int roll = Math.RandomInt(0, 100);
+        LogEventManager(eventType + " spawn chance roll: " + roll + "/" + config.m_iSpawnChance);
         if (roll >= config.m_iSpawnChance)
         {
             LogEventManager(eventType + " event failed spawn chance roll: " + roll + "/" + config.m_iSpawnChance);
@@ -169,12 +265,14 @@ class TSE_EventManagerComponent : OVT_Component
         // Check interval constraints
         float timeSinceLastEvent = GetTimeSinceLastEventOfType(eventType);
         float minInterval = config.m_iMinIntervalHours * 3600;
+        LogEventManager(eventType + " interval check: " + timeSinceLastEvent/3600 + " hours since last (min: " + config.m_iMinIntervalHours + " hours)");
         if (timeSinceLastEvent < minInterval)
         {
             LogEventManager(eventType + " event on cooldown for " + (minInterval - timeSinceLastEvent) / 3600 + " more hours");
             return;
         }
         
+        LogEventManager("All checks passed for " + eventType + ", starting event");
         // Start the event
         StartEvent(eventType, config);
     }
@@ -196,6 +294,11 @@ class TSE_EventManagerComponent : OVT_Component
         {
             m_SmuglersEventComponent.StartEventFromManager(TSE_SmuglersEventConfig.Cast(config));
             componentID = m_SmuglersEventComponent.GetOwner().GetID();
+        }
+        else if (eventType == "airdrop" && m_AirDropEventComponent)
+        {
+            m_AirDropEventComponent.StartEventFromManager(TSE_AirDropEventConfig.Cast(config));
+            componentID = m_AirDropEventComponent.GetOwner().GetID();
         }
         else
         {
@@ -230,6 +333,8 @@ class TSE_EventManagerComponent : OVT_Component
                 stillActive = m_ConvoyEventComponent.IsEventActive();
             else if (activeEvent.m_sEventType == "smugglers" && m_SmuglersEventComponent)
                 stillActive = m_SmuglersEventComponent.IsEventActive();
+            else if (activeEvent.m_sEventType == "airdrop" && m_AirDropEventComponent)
+                stillActive = m_AirDropEventComponent.IsEventActive();
                 
             if (!stillActive)
             {
@@ -251,9 +356,17 @@ class TSE_EventManagerComponent : OVT_Component
     
     float GetTimeSinceLastEventOfType(string eventType)
     {
-        // For now, just return a large value to allow events
-        // TODO: Implement proper event history tracking
-        return 999999;
+        // For testing, allow events immediately after first startup
+        float currentTime = GetGame().GetWorld().GetWorldTime();
+        if (m_fLastEventTime == 0)
+        {
+            LogEventManager("First event startup - bypassing interval check for " + eventType);
+            return 999999; // Large value to allow first event
+        }
+        
+        // TODO: Implement proper per-event-type history tracking
+        // For now, use global last event time as approximation
+        return currentTime - m_fLastEventTime;
     }
     
     float GetGameTimeHours()
@@ -272,8 +385,12 @@ class TSE_EventManagerComponent : OVT_Component
     
     void LogEventManager(string message)
     {
+        Print("[TSE_EventManager] " + message);
         if (m_ManagerConfig && m_ManagerConfig.m_bDebugLogging)
-            Print("[TSE_EventManager] " + message);
+        {
+            // Additional debug info
+            Print("[TSE_EventManager_DEBUG] ActiveEvents: " + m_ActiveEvents.Count() + ", LastEventTime: " + m_fLastEventTime);
+        }
     }
     
     // Public interface methods
@@ -306,6 +423,8 @@ class TSE_EventManagerComponent : OVT_Component
             config = m_ConvoyConfig;
         else if (eventType == "smugglers")
             config = m_SmuglersConfig;
+        else if (eventType == "airdrop")
+            config = m_AirDropConfig;
         else
             return false;
             

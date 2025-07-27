@@ -7714,5 +7714,47 @@ StringTable {
    Author "Osi"
    LastChanged "Osi"
   }
+  CustomStringTableItem "{65F71EAAAA75DDE3}" {
+   Id "TSE_AirDropEventOccupationVictor"
+   Target_en_us "INTEL: Occupation forces secured air drop supplies. They gained %1 resources."
+   Target_ru_ru "РАЗВЕДКА: Оккупационные силы обеспечили припасы воздушного десанта. Они получили %1 ресурсов."
+   Modified 1710694431
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65F71EAA80139EF3}" {
+   Id "TSE_AirDropEventResistanceVictory"
+   Target_en_us "INTEL: Air drop supplies successfully intercepted. Well done, resistance."
+   Target_ru_ru "РАЗВЕДКА: Припасы воздушного десанта успешно перехвачены. Хорошо сработано, сопротивление."
+   Modified 1710694437
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65F717483583E35D}" {
+   Id "TSE_AirDropEventSpecialForces"
+   Target_en_us "INTEL: Enemy special forces detected moving toward air drop location. Be advised."
+   Target_ru_ru "РАЗВЕДКА: Обнаружены вражеские спецназ, движущиеся к месту сброса. Будьте осторожны."
+   Modified 1710693416
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65F71748E0263F15}" {
+   Id "TSE_AirDropEventStart"
+   Target_en_us "INTEL: Air drop supplies detected %1 of %2, approximately %3 meters away. Intercept before occupation forces arrive."
+   Target_en_us_edited "}"\
+   ""
+   Target_ru_ru "РАЗВЕДКА: Обнаружены припасы воздушного десанта %1 от %2, примерно %3 метров. Перехватите до прибытия оккупационных сил."
+   Modified 1710693335
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65F7174839FB558C}" {
+   Id "TSE_AirDropEventStartExact"
+   Target_en_us "INTEL: Air drop supplies detected %1 of %2, approximately %3 meters away. Exact coordinates available. Intercept before occupation forces arrive."
+   Target_ru_ru "РАЗВЕДКА: Обнаружены припасы воздушного десанта %1 от %2, примерно %3 метров. Доступны точные координаты. Перехватите до прибытия оккупационных сил."
+   Modified 1710693387
+   Author "Osi"
+   LastChanged "Osi"
+  }
  }
 }

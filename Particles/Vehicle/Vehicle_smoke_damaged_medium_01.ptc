@@ -1,0 +1,122 @@
+EffectDef {
+ Version 1
+ Emitters {
+  EmitterDef fast_smoke {
+   ShapeType Sphere
+   ShapeSize 0.5 0.5 0.5
+   ConeAngle 360 0 90
+   MaxNum 20
+   BirthRate 2
+   BirthRateVel 0
+   Angles 45 0 0
+   LodMin 0
+   LodMax 1
+   Material "{896ED2720AFADD2C}Particles/_Materials/Gas/Smoke_Cloud_Dark_02.emat"
+   SizeMultiplier 2
+   SizeRND 3
+   RotMultiplier 60
+   RandomRotDir 1
+   RandomAngle 1
+   Velocity 0.05
+   VelocityRND 0.05
+   VelAffect 0.5
+   AirResistance 0.3
+   AirResistanceRND 0
+   WindInfluence 1
+   GravityMultiply -0.01
+   AnimOnce 1
+   AnimFPS 40
+   RandomFrame 0
+   Lifetime 2
+   LifetimeRND 1
+   Color {
+    0 0.117 0.117 0.117
+   }
+   Alpha {
+    0 0 0.161 0.6 1 0
+   }
+   RotationSpeed {
+    0 0.025 1 1
+   }
+   Size {
+    0 0.452 1 1
+   }
+  }
+  EmitterDef smoke_big {
+   ConeAngle 360 0 120
+   MaxNum 40
+   BirthRate 3
+   BirthRateVel 1
+   Angles 0 0 0
+   LodMin 0
+   LodMax 1
+   Material "{029D33C344E15DFB}Particles/_Materials/Gas/Smoke_loop_01.emat"
+   SizeMultiplier 10
+   SizeRND 3
+   RotMultiplier 20
+   RandomRotDir 1
+   RandomAngle 1
+   Velocity 0.25
+   VelocityRND 0.25
+   VelAffect 0.2
+   AirResistance 0.6
+   AirResistanceRND 0
+   WindInfluence 1
+   ParentVelRelToAir 0.35
+   GravityMultiply -0.1
+   AnimFPS 60
+   Lifetime 3
+   LifetimeRND 2
+   Color {
+    0 0.168 0.168 0.168 1 0.11 0.11 0.11
+   }
+   Alpha {
+    0 0 0.203 0.5 1 0
+   }
+   RotationSpeed {
+    0 0.025 1 1
+   }
+   Size {
+    0 0.133 0.302 0.504 0.59 0.778 1 1
+   }
+  }
+  EmitterDef smoke_big_LOD2 {
+   ConeAngle 360 0 120
+   MaxNum 40
+   BirthRate 1
+   BirthRateVel 0.3
+   Angles 0 0 0
+   LodMin 2
+   LodMax 2
+   Material "{029D33C344E15DFB}Particles/_Materials/Gas/Smoke_loop_01.emat"
+   SizeMultiplier 20
+   SizeRND 3
+   RotMultiplier 20
+   RandomRotDir 1
+   RandomAngle 1
+   Velocity 0.25
+   VelocityRND 0.25
+   VelAffect 0.2
+   AirResistance 0.6
+   AirResistanceRND 0
+   WindInfluence 1
+   ParentVelRelToAir 0.35
+   GravityMultiply -0.1
+   AnimFPS 60
+   Lifetime 3
+   LifetimeRND 2
+   Color {
+    0 0.168 0.168 0.168
+   }
+   Alpha {
+    0 0 0.203 0.5 1 0
+   }
+   RotationSpeed {
+    0 0.025 1 1
+   }
+   Size {
+    0 0.133 0.302 0.504 0.59 0.778 1 1
+   }
+  }
+ }
+}

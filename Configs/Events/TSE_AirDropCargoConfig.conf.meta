@@ -1,0 +1,13 @@
+MetaFileClass {
+ Name "{C7E2A5EB0A8B3D20}Configs/Events/TSE_AirDropCargoConfig.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+} 

@@ -23,4 +23,22 @@ class TSE_ConvoyEventConfig : TSE_BaseEventConfig
         m_iPriority = 2;
         m_bAllowSimultaneous = false;
     }
+    
+    // Load configuration from file
+    static TSE_ConvoyEventConfig LoadConfig()
+    {
+        Resource configResource = Resource.Load("{3F0D5071BC60E43C}Configs/Events/TSE_ConvoyEventConfig.conf");
+        if (configResource && configResource.IsValid())
+        {
+            TSE_ConvoyEventConfig config = TSE_ConvoyEventConfig.Cast(BaseContainerTools.CreateInstanceFromContainer(configResource.GetResource().ToBaseContainer()));
+            if (config)
+            {
+                Print("[ConvoyEvent] Configuration loaded from file");
+                return config;
+            }
+        }
+        
+        Print("[ConvoyEvent] Using default configuration");
+        return new TSE_ConvoyEventConfig();
+    }
 } 

@@ -1,0 +1,34 @@
+GenericEntity : "{6511EA5E7DD4C149}Prefabs/Props/Military/MilitaryCrates/CrateStack_01/Dst/CrateStack_01_Dst_3_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  SCR_EditableEntityComponent "{65F6DB19373E6DE4}" {
+   m_Flags 0
+  }
+  SCR_UniversalInventoryStorageComponent "{65F6DB1955C4567C}" {
+   Attributes SCR_ItemAttributeCollection "{65F6DB196672AFF6}" {
+    ItemDisplayName UIInfo "{5992E2EDDE65CA48}" {
+     Name "#AR-Ammobox_Name"
+     Description "#AR-Ammobox_Name"
+    }
+    m_Size SLOT_3x3
+   }
+   UseCapacityCoefficient 0
+   MaxCumulativeVolume 3000000
+   m_fMaxWeight 3000000
+  }
+  SCR_InventoryStorageManagerComponent "{65F6DB194D20218D}" {
+  }
+  ActionsManagerComponent "{65F6DB19742698DF}" {
+  }
+  Hierarchy "{65F6DB1924A30B0D}" {
+  }
+ }
+ {
+  ParticleEffectEntity {
+   ID "65F712F8700084DE"
+   coords -0.039 0.422 -0.122
+   scale 2
+   EffectPath "{D1C900C94DD3D4B2}Particles/Weapon/Smoke_grenade_M18_Green.ptc"
+  }
+ }
+}

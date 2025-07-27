@@ -1,0 +1,7 @@
+OVT_VehiclePatrolSpawn : "{5BF1F972169C6923}Prefabs/GameMode/OVT_VehiclePatrolSpawn.et" {
+ ID "65C30765DCA521A4"
+ components {
+  TSE_AirDropSpawnComponent "{65E92D98348C0007}" {
+  }
+ }
+}
