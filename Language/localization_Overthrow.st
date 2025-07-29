@@ -7714,6 +7714,38 @@ StringTable {
    Author "Osi"
    LastChanged "Osi"
   }
+  CustomStringTableItem "{65FAED06BF4D68CB}" {
+   Id "TSE-Item_Lakin01_Description"
+   Target_en_us "Basic infantry radio for short-range communications. They say it was this radio that was in Captain Lakin's deep pockets when he was interrogated by unknown persons."
+   Target_ru_ru "Базовая пехотная радиостанция для связи на короткое расстояние. Говорят именно эта рация находилась в глубоких карманах Капитана Лакина при допросе неизвестными."
+   Modified 1710945351
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FAED0698A7F3B5}" {
+   Id "TSE-Item_Lakin01_Name"
+   Target_en_us "Lakin01 Radio"
+   Target_ru_ru "Lakin01 Радио"
+   Modified 1710945178
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FAED0FF3FD2170}" {
+   Id "TSE-Item_Laptop_Description"
+   Target_en_us "Terminal for monitoring the tactical situation in the region."
+   Target_ru_ru "Терминал для отслеживания тактической ситуации в регионе."
+   Modified 1710948879
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FAED0FA447E4FF}" {
+   Id "TSE-Item_Laptop_Name"
+   Target_en_us "Tactical terminal"
+   Target_ru_ru "Тактический терминал"
+   Modified 1710948751
+   Author "Osi"
+   LastChanged "Osi"
+  }
   CustomStringTableItem "{65F71EAAAA75DDE3}" {
    Id "TSE_AirDropEventOccupationVictor"
    Target_en_us "INTEL: Occupation forces secured air drop supplies. They gained %1 resources."

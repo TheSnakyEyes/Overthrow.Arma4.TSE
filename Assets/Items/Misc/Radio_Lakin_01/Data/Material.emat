@@ -1,0 +1,11 @@
+MatPBRBasic {
+ Color 0.263 0.263 0.263 1
+ Emissive 0.156 0.156 0.156 0
+ EmissiveLV 3.294
+ EmissiveAbsoluteLV 0
+ ApplyAlbedoToEmissive 1
+ EmissiveMap "{AB8F563A4F9930B2}Assets/Items/Misc/Radio_Lakin_01/RGB.edds"
+ BCRMap "{223E6A83A90E21B4}Assets/Items/Misc/Radio_Lakin_01/RGB_Alpha_1.edds"
+ NormalPower 1.059
+ NMOMap "{64B433A7E6D54490}Assets/Items/Misc/Radio_Lakin_01/RGB_Alpha.edds"
+}

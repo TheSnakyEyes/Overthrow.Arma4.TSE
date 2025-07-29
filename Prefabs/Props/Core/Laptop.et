@@ -1,0 +1,62 @@
+GenericEntity : "{10C26F96EF7A8CF5}Prefabs/Props/Core/Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  EPF_PersistenceComponent "{65FAED0C39455620}" {
+  }
+  InventoryItemComponent "{65FAED0CC025309C}" {
+   Attributes SCR_ItemAttributeCollection "{65FAED0CFD2D7FF2}" {
+    ItemDisplayName UIInfo "{65FAED0CF07AB290}" {
+     Name "#TSE-Item_Laptop_Name"
+     Description "#TSE-Item_Laptop_Description"
+     Icon "{CF038C42DC15871B}UI/Textures/VON/ANPRC77-100px_UI.edds"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{65FAED0CEB81A57A}" {
+     Weight 1.5
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 300
+     DimensionScaler 1
+     RestingUP Forward
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0.15
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{65FAED0CE0498462}" {
+     AnimationInstance "{332D4A7512E78419}Assets/Items/Equipment/workspaces/Radio_ANPRC68_player.asi"
+     AllowInspection 1
+    }
+   }
+  }
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{59E5632C9A19376E}Assets/Items/Misc/FIA_Laptop/Laptop.xob"
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   ModelGeometry 1
+  }
+  ActionsManagerComponent "{65FAED0C09FBFB57}" {
+   ActionContexts {
+    UserActionContext "{65FAED0C664C0492}" {
+     ContextName "default"
+     Position PointInfo "{65FAED0F947779AC}" {
+      Offset 0 0.1 0
+     }
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{65FAED0FB9473496}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{65FAED0FBB3E9F61}" {
+      Name "#AR-Inventory_PickUp"
+     }
+    }
+   }
+  }
+  RplComponent "{65FAED0C19DDC389}" {
+  }
+  Hierarchy "{65FAED0C1F59FFC3}" {
+  }
+ }
+ coords 0 0 0
+ scale 1.8
+}
