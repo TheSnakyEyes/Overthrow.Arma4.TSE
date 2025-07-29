@@ -1,0 +1,10 @@
+MatPBRBasic {
+ Color 0.102 0.102 0.102 1
+ Emissive 0.503 0.503 0.503 0
+ EmissiveLV 0.706
+ EmissiveAbsoluteLV 0
+ ApplyAlbedoToEmissive 1
+ EmissiveMap "{E0784137E9242917}RGB.edds"
+ BCRMap "{A029A9A021EB3347}RGB Alpha_1.edds"
+ NMOMap "{FB112E49356D7246}RGB Alpha.edds"
+}

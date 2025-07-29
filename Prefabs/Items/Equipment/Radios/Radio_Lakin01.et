@@ -1,0 +1,40 @@
+GenericEntity : "{73950FBA2D7DB5C5}Prefabs/Items/Equipment/Radios/Radio_ANPRC68.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  BaseRadioComponent "{5A30BAE7673C63CA}" {
+   "Encryption key" "InArmyNow"
+   Transceivers {
+    RadioTransceiver "{5A6C8885A4D45664}" {
+     ChannelFrequency 72000
+     "Min tunable frequency" 70000
+     "Max tunable frequency" 80000
+    }
+    RadioTransceiver "{5A8E721FD75D0F5F}" {
+     ChannelFrequency 78000
+     "Min tunable frequency" 72000
+     "Max tunable frequency" 80000
+    }
+   }
+  }
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Name "#TSE-Item_Lakin01_Name"
+     Description "#TSE-Item_Lakin01_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.8
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5A6C68D9F96BC9BE}" {
+     HandAdditiveRotation 0 180 10
+     HandAdditiveTranslation 0 0.1 0
+    }
+   }
+  }
+  MeshObject "{5A30BAE7673C63D1}" {
+   Object "{C3E70482774D389E}Assets/Items/Misc/Radio_Lakin_01/Radio.xob"
+  }
+ }
+ coords -1.268 1.571 1.658
+ scale 1.1
+}

@@ -1,0 +1,31 @@
+GenericEntity {
+ components {
+  MeshObject "{65FAED0F6EA0E643}" {
+   Object "{42A9C464831F5644}Assets/Characters/Vests/Vest_P58/P58_Canteen_44Pattern.xob"
+  }
+ }
+ coords 9938.865 316.287 2248.507
+}
+GenericEntity Laptop_65FB030601F12661 : "{0685FA533C8718DB}Prefabs/Props/Core/Laptop.et" {
+ components {
+  ActionsManagerComponent "{65FAED0C09FBFB57}" {
+   additionalActions {
+    SCR_PickUpItemAction "{65FAED0FB9473496}" {
+     ParentContextList {
+      "default"
+     }
+    }
+   }
+  }
+ }
+ coords 9938.541 316.143 2248.535
+ angleX 9.172
+ angleY -0.511
+ angleZ -3.205
+}
+GenericEntity Radio_Lakin01_65FAED0F40FC8F99 : "{0AE1FF78382CEE4E}Prefabs/Items/Equipment/Radios/Radio_Lakin01.et" {
+ coords 9938.915 316.276 2248.612
+ angleX 14.627
+ angleY 48.543
+ angleZ 6.478
+}

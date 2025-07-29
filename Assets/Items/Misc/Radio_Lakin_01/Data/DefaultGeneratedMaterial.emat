@@ -1,0 +1,10 @@
+MatPBRBasic {
+ Color 0.305 0.305 0.305 1
+ Emissive 0.149 0.149 0.149 0
+ EmissiveLV 3.294
+ ApplyAlbedoToEmissive 1
+ EmissiveMap "{E0784137E9242917}Assets/Items/Misc/FIA_Laptop/RGB.edds"
+ BCRMap "{A029A9A021EB3347}Assets/Items/Misc/FIA_Laptop/RGB Alpha_1.edds"
+ NormalPower 1.5
+ NMOMap "{FB112E49356D7246}Assets/Items/Misc/FIA_Laptop/RGB Alpha.edds"
+}

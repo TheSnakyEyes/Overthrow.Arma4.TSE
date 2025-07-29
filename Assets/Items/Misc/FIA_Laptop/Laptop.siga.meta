@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{1BC618CBA4D1982C}Laptop.siga"
+ Configurations {
+  ProcAnimSignalResourceClass PC {
+  }
+  ProcAnimSignalResourceClass XBOX_ONE : PC {
+  }
+  ProcAnimSignalResourceClass XBOX_SERIES : PC {
+  }
+  ProcAnimSignalResourceClass PS4 : PC {
+  }
+  ProcAnimSignalResourceClass PS5 : PC {
+  }
+  ProcAnimSignalResourceClass HEADLESS : PC {
+  }
+ }
+}
