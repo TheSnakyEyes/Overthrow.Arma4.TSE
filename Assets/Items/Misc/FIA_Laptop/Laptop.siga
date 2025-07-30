@@ -1,31 +1,94 @@
 ProcAnimSignalResClass {
  Inputs {
   IOPItemInputClass {
-   id 3
-   name "Input 3"
-   tl -295 2
+   id 8
+   name "Lit"
+   tl -144 212
    children {
-    4
+    20
    }
-   value 1
+  }
+  IOPInputValueClass {
+   id 12
+   name "Value 12"
+   tl 93 51
+   children {
+    21
+   }
+   value 40
+  }
+ }
+ Ops {
+  IOPItemOpSmootherClass {
+   id 20
+   name "Smoother 20"
+   tl 96 156
+   children {
+    21
+   }
+   inputs {
+    ConnectionClass connection {
+     id 8
+     port 0
+    }
+   }
+   "Fade In Time" 750
+   "Fade Out Time" 750
+   "Fade In Type" "S-curve"
+   "Fade Out Type" "S-curve"
+  }
+  IOPItemOpMulClass {
+   id 21
+   name "Mul 21"
+   tl 295 150
+   children {
+    9
+   }
+   inputs {
+    ConnectionClass connection {
+     id 12
+     port 0
+    }
+    ConnectionClass connection {
+     id 20
+     port 0
+    }
+   }
   }
  }
  Outputs {
   IOPItemOutputClass {
-   id 4
-   name "Output 4"
-   tl -10 10
-   input 3
+   id 9
+   name "Output 0"
+   tl 505 179
+   input 21
   }
  }
  compiled IOPCompiledClass {
   visited {
-   5 6
+   133 5 7 139 6
   }
   ins {
    IOPCompiledIn {
     data {
-     1 2
+     1 3
+    }
+   }
+   IOPCompiledIn {
+    data {
+     1 65539
+    }
+   }
+  }
+  ops {
+   IOPCompiledOp {
+    data {
+     1 65539 2 0 0
+    }
+   }
+   IOPCompiledOp {
+    data {
+     1 2 4 65536 0 1 0
     }
    }
   }
@@ -36,7 +99,10 @@ ProcAnimSignalResClass {
     }
    }
   }
-  processed 2
+  processed 5
   version 2
+  ops_reeval_list {
+   0
+  }
  }
 }

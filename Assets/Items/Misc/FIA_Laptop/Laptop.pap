@@ -1,24 +1,24 @@
 ProcAnimProjectClass {
  signals {
   SignalClass {
-   id 4100
-   name "Signal 4"
-   tl -642.323 -58
-   res "{1BC618CBA4D1982C}Laptop.siga"
+   id 5124
+   name "Lit"
+   tl -451.85 37.9
+   res "{A8CC5DD254654737}Assets/Items/Misc/FIA_Laptop/Laptop.siga"
    inputsport {
-    3
+    8
    }
    outputsport {
-    4
+    9
    }
    inputvalues {
-    4.1
+    60
    }
    inputvaluesmin {
     0
    }
    inputvaluesmax {
-    90
+    60
    }
   }
  }
@@ -26,7 +26,7 @@ ProcAnimProjectClass {
   RotationMakeClass {
    id 1030
    name "RotationMake 1030"
-   tl -306.85 -59.6
+   tl -243 80
    iops {
     IOPConnectionClass iopConnection {
      port 0
@@ -35,8 +35,36 @@ ProcAnimProjectClass {
        id 0
        links {
         ConnectionClass connection {
-         id 4100
-         port 4
+         id 5124
+         port 9
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 2
+     conn {
+      ConnectionsClass connections {
+       id 0
+       links {
+        ConnectionClass connection {
+         id 5124
+         port 9
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 1
+     conn {
+      ConnectionsClass connections {
+       id 0
+       links {
+        ConnectionClass connection {
+         id 5124
+         port 9
         }
        }
       }
@@ -46,12 +74,11 @@ ProcAnimProjectClass {
    outs {
     2054
    }
-   Z 70.6
   }
   RotationSetClass {
    id 2054
    name "RotationSet 2054"
-   tl -7 -174
+   tl 10.5 -13.75
    funcs {
     IOPConnectionClass iopConnection {
      port 0
@@ -82,20 +109,20 @@ ProcAnimProjectClass {
      }
     }
    }
+   UpdateCollider 1
   }
   BoneClass {
    id 3078
-   name "Bone1"
+   name "Bone 3078"
    version 0
-   tl -578 -176
+   tl -328.9 -45.2
    outs {
     2054
    }
-   bone "testbone"
-   updatebbox 1
+   bone "Bone1"
   }
  }
- model "{1FF36AD36316CA05}test.xob"
+ model "{65FB535886415513}Assets/Items/Misc/FIA_Laptop/Laptop.xob"
  version 1
  compiled ProcAnimCompiledClass {
   visited {

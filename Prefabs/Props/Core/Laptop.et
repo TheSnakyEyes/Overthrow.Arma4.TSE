@@ -50,6 +50,17 @@ GenericEntity : "{10C26F96EF7A8CF5}Prefabs/Props/Core/Props_Base.et" {
       Name "#AR-Inventory_PickUp"
      }
     }
+    TSE_OpenTerminalAction "{65FB170EAF20D9F8}" {
+     ParentContextList {
+      "default"
+     }
+     ActionName "TSE_OpenTerminal"
+     UIInfo UIInfo "{65FB170EA2950263}" {
+      Name "#TSE-Terminal_Open"
+      Description "#TSE-Terminal_Open_Description"
+     }
+    }
+
    }
   }
   RplComponent "{65FAED0C19DDC389}" {

@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{65FB1BF9F53FB057}UI/Layouts/Menu/TerminalMenu/TerminalMenu.layout"
+ Configurations {
+  LayoutResourceClass PC {
+  }
+  LayoutResourceClass XBOX_ONE : PC {
+  }
+  LayoutResourceClass XBOX_SERIES : PC {
+  }
+  LayoutResourceClass PS4 : PC {
+  }
+  LayoutResourceClass HEADLESS : PC {
+  }
+ }
+}

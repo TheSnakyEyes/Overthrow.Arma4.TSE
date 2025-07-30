@@ -1,12 +1,13 @@
 MetaFileClass {
- Name "{59E5632C9A19376E}Laptop.xob"
+ Name "{65FB535886415513}Assets/Items/Misc/FIA_Laptop/Laptop.xob"
  Configurations {
   FBXResourceClass PC {
    ExportSkinning 1
+   Animated 1
    MaterialAssigns {
     MaterialAssignClass "{65F6DB2F8E8BAAF4}" {
      SourceMaterial "DefaultGeneratedMaterial"
-     AssignedMaterial "{5E3F5E06C26101C2}Data/DefaultGeneratedMaterial.emat"
+     AssignedMaterial "{5E3F5E06C26101C2}Assets/Items/Misc/Radio_Lakin_01/Data/DefaultGeneratedMaterial.emat"
     }
    }
    MeshParams {

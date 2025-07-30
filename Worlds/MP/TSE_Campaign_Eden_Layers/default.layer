@@ -6,22 +6,11 @@ GenericEntity {
  }
  coords 9938.865 316.287 2248.507
 }
-GenericEntity Laptop_65FB030601F12661 : "{0685FA533C8718DB}Prefabs/Props/Core/Laptop.et" {
- components {
-  ActionsManagerComponent "{65FAED0C09FBFB57}" {
-   additionalActions {
-    SCR_PickUpItemAction "{65FAED0FB9473496}" {
-     ParentContextList {
-      "default"
-     }
-    }
-   }
-  }
- }
- coords 9938.541 316.143 2248.535
- angleX 9.172
- angleY -0.511
- angleZ -3.205
+GenericEntity Laptop_65FB6272FB8D6EBE : "{0685FA533C8718DB}Prefabs/Props/Core/Laptop.et" {
+ coords 9938.418 316.127 2248.515
+ angleX 6.638
+ angleY -0.632
+ angleZ -5.451
 }
 GenericEntity Radio_Lakin01_65FAED0F40FC8F99 : "{0AE1FF78382CEE4E}Prefabs/Items/Equipment/Radios/Radio_Lakin01.et" {
  coords 9938.915 316.276 2248.612

@@ -151,6 +151,14 @@ SCR_ChimeraCharacter : "{7A9EE19AB67B298B}Prefabs/Characters/Factions/INDFOR/FIA
      m_sCloseAction "MenuBack"
      m_bOpenActionCloses 0
     }
+    TSE_TerminalContext "{TSE_Terminal_Context_New}" {
+     m_Layout "{65FB1BF9F53FB057}UI/Layouts/Menu/TerminalMenu/TerminalMenu.layout"
+     m_sContextName "TSETerminalContextNew"
+     m_sOpenAction "TSE_OpenTerminal"
+     m_sCloseAction "MenuBack"
+     m_bOpenActionCloses 0
+     m_bHideHUDOnShow 1
+    }
    }
   }
   SCR_BaseHUDComponent "{520EA1D2DB118134}" {

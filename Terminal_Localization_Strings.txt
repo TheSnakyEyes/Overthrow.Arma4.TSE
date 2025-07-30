@@ -1,0 +1,124 @@
+ТЕРМИНАЛ - СТРОКИ ЛОКАЛИЗАЦИИ
+================================
+
+Строки для добавления в файл: Language/localization_Overthrow.en-us.conf
+
+В секцию "Keys":
+// Terminal UI Localization
+"TSE-Terminal_Intel_Tab"
+"TSE-Terminal_Faction_Tab"
+"TSE-Terminal_Smugler_Tab"
+"TSE-Terminal_Region_Stability"
+"TSE-Terminal_Affected_Locations"
+"TSE-Terminal_Occupying_Resources"
+"TSE-Terminal_Resistance_Threat"
+"TSE-Terminal_Future_Plans"
+"TSE-Terminal_Last_Updated"
+"TSE-Terminal_Next_Delivery"
+"TSE-Terminal_Available_Weapons"
+"TSE-Terminal_Available_Vehicles"
+"TSE-Terminal_Barrage_Service"
+"TSE-Terminal_Distraction_Service"
+"TSE-Terminal_Pin_Position"
+"TSE-Item_Laptop_Name"
+"TSE-Item_Laptop_Description"
+"TSE-Terminal_Open"
+"TSE-Terminal_Open_Description"
+
+В секцию "Texts":
+// Terminal UI Translations
+"Intel"
+"Faction Info"
+"Smugler's Services"
+"Region Stability"
+"Affected Locations"
+"Occupying Faction Resources"
+"Resistance Threat Level"
+"Future Plans"
+"Last Updated"
+"Next Supporting Faction Delivery"
+"Available Weapons"
+"Available Vehicles"
+"Barrage Service"
+"Distraction Service"
+"Pin Position"
+"Tactical Terminal"
+"Terminal for monitoring the tactical situation in the region."
+"Open Terminal"
+"Access tactical information and faction status"
+
+================================
+
+ПОЛНЫЙ СПИСОК СТРОК ДЛЯ КОПИРОВАНИЯ:
+
+Keys:
+"TSE-Terminal_Intel_Tab"
+"TSE-Terminal_Faction_Tab"
+"TSE-Terminal_Smugler_Tab"
+"TSE-Terminal_Region_Stability"
+"TSE-Terminal_Affected_Locations"
+"TSE-Terminal_Occupying_Resources"
+"TSE-Terminal_Resistance_Threat"
+"TSE-Terminal_Future_Plans"
+"TSE-Terminal_Last_Updated"
+"TSE-Terminal_Next_Delivery"
+"TSE-Terminal_Available_Weapons"
+"TSE-Terminal_Available_Vehicles"
+"TSE-Terminal_Barrage_Service"
+"TSE-Terminal_Distraction_Service"
+"TSE-Terminal_Pin_Position"
+"TSE-Item_Laptop_Name"
+"TSE-Item_Laptop_Description"
+"TSE-Terminal_Open"
+"TSE-Terminal_Open_Description"
+
+Texts:
+"Intel"
+"Faction Info"
+"Smugler's Services"
+"Region Stability"
+"Affected Locations"
+"Occupying Faction Resources"
+"Resistance Threat Level"
+"Future Plans"
+"Last Updated"
+"Next Supporting Faction Delivery"
+"Available Weapons"
+"Available Vehicles"
+"Barrage Service"
+"Distraction Service"
+"Pin Position"
+"Tactical Terminal"
+"Terminal for monitoring the tactical situation in the region."
+"Open Terminal"
+"Access tactical information and faction status"
+
+================================
+
+ИСПОЛЬЗОВАНИЕ В КОДЕ:
+
+В layout файле:
+Text "#TSE-Terminal_Intel_Tab"
+Text "#TSE-Terminal_Region_Stability"
+Text "#TSE-Terminal_Open"
+
+В UserAction:
+ActionName "TSE_OpenTerminal"
+UIInfo UIInfo "{TSE_Laptop_OpenTerminal_UI}" {
+    Name "#TSE-Terminal_Open"
+    Description "#TSE-Terminal_Open_Description"
+}
+
+В Laptop.et:
+UIInfo UIInfo "{TSE_Laptop_OpenTerminal_UI}" {
+    Name "#TSE-Terminal_Open"
+    Description "#TSE-Terminal_Open_Description"
+}
+
+================================
+
+ПРИМЕЧАНИЯ:
+- Все строки начинаются с префикса "TSE-" для уникальности
+- В layout файлах используются с символом "#" в начале
+- Строки уже добавлены в файл Language/localization_Overthrow.en-us.conf
+- Для других языков нужно добавить соответствующие переводы

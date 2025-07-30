@@ -7746,6 +7746,125 @@ StringTable {
    Author "Osi"
    LastChanged "Osi"
   }
+  CustomStringTableItem "{65FB170E3095D9AA}" {
+   Id "TSE-Terminal_Affected_Locations"
+   Target_en_us "Affected Locations"
+   Modified 1710954565
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170FD0902FBE}" {
+   Id "TSE-Terminal_Available_Vehicles"
+   Target_en_us "Available Vehicles"
+   Modified 1710954845
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170FC10298CD}" {
+   Id "TSE-Terminal_Available_Weapons"
+   Target_en_us "Available Weapons"
+   Modified 1710954880
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170FF95D55C4}" {
+   Id "TSE-Terminal_Barrage_Service"
+   Target_en_us "Barrage Service"
+   Modified 1710954895
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170FF10F65EF}" {
+   Id "TSE-Terminal_Distraction_Service"
+   Target_en_us "Distraction Service"
+   Modified 1710954905
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170E0E9C518C}" {
+   Id "TSE-Terminal_Faction_Tab"
+   Target_en_us "Faction Info"
+   Modified 1710954528
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170E5ED34803}" {
+   Id "TSE-Terminal_Future_Plans"
+   Target_en_us "Future Plans"
+   Modified 1710954614
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170EF2C0421A}" {
+   Id "TSE-Terminal_Intel_Tab"
+   Target_en_us "Intel"
+   Modified 1710954471
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170E5415943D}" {
+   Id "TSE-Terminal_Last_Updated"
+   Target_en_us "Last Updated"
+   Modified 1710954629
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170E4DD4859D}" {
+   Id "TSE-Terminal_Next_Delivery"
+   Target_en_us "Next Supporting Faction Delivery"
+   Modified 1710954643
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170E28D361E5}" {
+   Id "TSE-Terminal_Occupying_Resources"
+   Target_en_us "Occupying Faction Resources"
+   Modified 1710954580
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170F164C5084}" {
+   Id "TSE-Terminal_Open"
+   Target_en_us "Open Terminal"
+   Modified 1710954972
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170F0DC65433}" {
+   Id "TSE-Terminal_Open_Description"
+   Target_en_us "Access tactical information and faction status"
+   Modified 1710954982
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170FE97AA857}" {
+   Id "TSE-Terminal_Pin_Position"
+   Target_en_us "Pin Position"
+   Modified 1710954922
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170E398B5E42}" {
+   Id "TSE-Terminal_Region_Stability"
+   Target_en_us "Region Stability"
+   Modified 1710954547
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170E239C9168}" {
+   Id "TSE-Terminal_Resistance_Threat"
+   Target_en_us "Resistance Threat Level"
+   Modified 1710954596
+   Author "Osi"
+   LastChanged "Osi"
+  }
+  CustomStringTableItem "{65FB170E04510F85}" {
+   Id "TSE-Terminal_Smugler_Tab"
+   Target_en_us "Smugler's Services"
+   Modified 1710954537
+   Author "Osi"
+   LastChanged "Osi"
+  }
   CustomStringTableItem "{65F71EAAAA75DDE3}" {
    Id "TSE_AirDropEventOccupationVictor"
    Target_en_us "INTEL: Occupation forces secured air drop supplies. They gained %1 resources."
