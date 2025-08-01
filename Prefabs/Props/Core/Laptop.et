@@ -27,7 +27,7 @@ GenericEntity : "{10C26F96EF7A8CF5}Prefabs/Props/Core/Props_Base.et" {
    }
   }
   MeshObject "{5872F0EB7FA40561}" {
-   Object "{59E5632C9A19376E}Assets/Items/Misc/FIA_Laptop/Laptop.xob"
+   Object "{65FB535886415513}Assets/Items/Misc/FIA_Laptop/Laptop.xob"
   }
   RigidBody "{5872F0EB7DFB5A9D}" {
    ModelGeometry 1
@@ -54,16 +54,15 @@ GenericEntity : "{10C26F96EF7A8CF5}Prefabs/Props/Core/Props_Base.et" {
      ParentContextList {
       "default"
      }
-     ActionName "TSE_OpenTerminal"
      UIInfo UIInfo "{65FB170EA2950263}" {
       Name "#TSE-Terminal_Open"
       Description "#TSE-Terminal_Open_Description"
      }
     }
-
    }
   }
   RplComponent "{65FAED0C19DDC389}" {
+   "Parent Node From Parent Entity" 0
   }
   Hierarchy "{65FAED0C1F59FFC3}" {
   }
