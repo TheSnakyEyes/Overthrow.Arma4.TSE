@@ -274,6 +274,10 @@ OVT_OverthrowGameMode OVT_OverthrowGameMode1 : "{4DC10DCB8BE06D32}Prefabs/GameMo
     m_fPeriodicSpawnIntervalHours 4
    }
   }
+  TSE_PlayerKillMortarEffect "{65E92D98348B7FFC}" {
+   m_fSpawnDelay 8
+   m_fSpawnRadius 30
+  }
   RplComponent "{59724C8C935D8E18}" {
    Streamable Disabled
   }

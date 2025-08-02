@@ -3,86 +3,35 @@
 
 class TSE_TerminalMenuWidgets
 {
-    // Widget references
     protected Widget m_RootFrame;
-    protected Widget m_IntelContent;
-    protected Widget m_FactionContent;
-    protected Widget m_SmuglerContent;
+    protected Widget m_IntelLayoutUp;
+    protected Widget m_IntelLayoutDown;
+    protected Widget m_FactionLayoutUp;
+    protected Widget m_SmugglersLayoutUp;
+    protected Widget m_SmugglersLayoutDown;
     
-    // Tab buttons
     protected ButtonWidget m_IntelTab;
-    protected ButtonWidget m_FactionTab;
-    protected ButtonWidget m_SmuglerTab;
+    protected ButtonWidget m_FactionsTab;
+    protected ButtonWidget m_SmuglersTab;
     
-    // Intel tab widgets
-    protected TextWidget m_StabilityValue;
-    protected TextWidget m_LocationsValue;
-    protected TextWidget m_ResourcesValue;
-    protected TextWidget m_ThreatValue;
-    protected TextWidget m_PlansValue;
-    protected TextWidget m_UpdatedValue;
-    protected TextWidget m_DeliveryValue;
+    protected ButtonWidget m_ButtonExit;
+    protected TextWidget m_TabIndicatorText;
     
-    // Faction tab widgets
-    protected ProgressBarWidget m_OFBar;
-    protected ProgressBarWidget m_FIABar;
-    protected ProgressBarWidget m_SFBar;
-    protected ProgressBarWidget m_SmuglersBar;
-    
-    // Smugler tab widgets
-    protected TextWidget m_WeaponsValue;
-    protected TextWidget m_VehiclesValue;
-    protected ButtonWidget m_BarrageButton;
-    protected ButtonWidget m_DistractionButton;
-    
-    // Close button
-    protected ButtonWidget m_CloseButton;
-    
-    // Current active tab
     protected int m_ActiveTab;
     
-    // Data variables (placeholder for future implementation)
-    protected string m_RegionStability;
-    protected string m_AffectedLocations;
-    protected string m_OccupyingResources;
-    protected string m_ResistanceThreat;
-    protected string m_FuturePlans;
-    protected string m_LastUpdated;
-    protected string m_NextDelivery;
+    // Image widgets for tab highlighting
+    protected ImageWidget m_IntelTabImage;
+    protected ImageWidget m_FactionsTabImage;
+    protected ImageWidget m_SmuglersTabImage;
     
-    protected float m_OFProgress;
-    protected float m_FIAProgress;
-    protected float m_SFProgress;
-    protected float m_SmuglersProgress;
-    
-    protected string m_AvailableWeapons;
-    protected string m_AvailableVehicles;
+    // Colors for tab highlighting
+    protected ref Color m_ActiveTabColor;
+    protected ref Color m_InactiveTabColor;
     
     // Constructor
     void TSE_TerminalMenuWidgets()
     {
         m_ActiveTab = 0; // Intel tab is default
-        InitializeData();
-    }
-    
-    // Initialize with default data
-    protected void InitializeData()
-    {
-        m_RegionStability = "Unstable";
-        m_AffectedLocations = "Our people suffer in City_1, City_2, City_3";
-        m_OccupyingResources = "Strong";
-        m_ResistanceThreat = "Extreme";
-        m_FuturePlans = "Gain stability and-or Manage resources and-or Fight Resistance and-or Raid on Smuglers";
-        m_LastUpdated = "N-time ago";
-        m_NextDelivery = "t-minus hours";
-        
-        m_OFProgress = 0.6;
-        m_FIAProgress = 0.7;
-        m_SFProgress = 0.4;
-        m_SmuglersProgress = 0.5;
-        
-        m_AvailableWeapons = "Tier of available weapons: Tier 1, Tier 2, Tier 3";
-        m_AvailableVehicles = "Tier of available vehicles: Basic, Special, Armored";
     }
     
     // Initialize widgets with root frame
@@ -90,59 +39,86 @@ class TSE_TerminalMenuWidgets
     {
         m_RootFrame = rootFrame;
         
-        // Find content panels
-        m_IntelContent = rootFrame.FindAnyWidget("IntelContent");
-        m_FactionContent = rootFrame.FindAnyWidget("FactionContent");
-        m_SmuglerContent = rootFrame.FindAnyWidget("SmuglerContent");
+        if (!rootFrame)
+            return;
+        
+        // Initialize colors
+        m_ActiveTabColor = new Color(0.1098, 0.302, 0.8745, 1.0); // Blue color for active tab
+        m_InactiveTabColor = new Color(0.2627, 0.2627, 0.2627, 1.0); // Gray color for inactive tab
+        
+        // Find content layouts
+        m_IntelLayoutUp = rootFrame.FindAnyWidget("Intel_Layout_Up");
+        m_IntelLayoutDown = rootFrame.FindAnyWidget("Intel_Layout_Down");
+        m_FactionLayoutUp = rootFrame.FindAnyWidget("Faction_Layout_Up");
+        m_SmugglersLayoutUp = rootFrame.FindAnyWidget("Smugglers_Layout_Up");
+        m_SmugglersLayoutDown = rootFrame.FindAnyWidget("Smugglers_Layout_Down");
         
         // Find tab buttons
-        m_IntelTab = ButtonWidget.Cast(rootFrame.FindAnyWidget("IntelTab"));
-        m_FactionTab = ButtonWidget.Cast(rootFrame.FindAnyWidget("FactionTab"));
-        m_SmuglerTab = ButtonWidget.Cast(rootFrame.FindAnyWidget("SmuglerTab"));
+        m_IntelTab = ButtonWidget.Cast(rootFrame.FindAnyWidget("Tab_Intel"));
+        m_FactionsTab = ButtonWidget.Cast(rootFrame.FindAnyWidget("Tab_Factions"));
+        m_SmuglersTab = ButtonWidget.Cast(rootFrame.FindAnyWidget("Tab_Smuglers"));
         
-        // Find Intel tab widgets
-        m_StabilityValue = TextWidget.Cast(rootFrame.FindAnyWidget("StabilityValue"));
-        m_LocationsValue = TextWidget.Cast(rootFrame.FindAnyWidget("LocationsValue"));
-        m_ResourcesValue = TextWidget.Cast(rootFrame.FindAnyWidget("ResourcesValue"));
-        m_ThreatValue = TextWidget.Cast(rootFrame.FindAnyWidget("ThreatValue"));
-        m_PlansValue = TextWidget.Cast(rootFrame.FindAnyWidget("PlansValue"));
-        m_UpdatedValue = TextWidget.Cast(rootFrame.FindAnyWidget("UpdatedValue"));
-        m_DeliveryValue = TextWidget.Cast(rootFrame.FindAnyWidget("DeliveryValue"));
+        // Find tab images (renamed Image0 widgets)
+        m_IntelTabImage = ImageWidget.Cast(rootFrame.FindAnyWidget("Image_Intel"));
+        m_FactionsTabImage = ImageWidget.Cast(rootFrame.FindAnyWidget("Image_Factions"));
+        m_SmuglersTabImage = ImageWidget.Cast(rootFrame.FindAnyWidget("Image_Smuglers"));
         
-        // Find Faction tab widgets
-        m_OFBar = ProgressBarWidget.Cast(rootFrame.FindAnyWidget("OFBar"));
-        m_FIABar = ProgressBarWidget.Cast(rootFrame.FindAnyWidget("FIABar"));
-        m_SFBar = ProgressBarWidget.Cast(rootFrame.FindAnyWidget("SFBar"));
-        m_SmuglersBar = ProgressBarWidget.Cast(rootFrame.FindAnyWidget("SmuglersBar"));
+        // Find other widgets
+        m_ButtonExit = ButtonWidget.Cast(rootFrame.FindAnyWidget("ButtonExit"));
+        m_TabIndicatorText = TextWidget.Cast(rootFrame.FindAnyWidget("Text0"));
         
-        // Find Smugler tab widgets
-        m_WeaponsValue = TextWidget.Cast(rootFrame.FindAnyWidget("WeaponsValue"));
-        m_VehiclesValue = TextWidget.Cast(rootFrame.FindAnyWidget("VehiclesValue"));
-        m_BarrageButton = ButtonWidget.Cast(rootFrame.FindAnyWidget("BarrageButton"));
-        m_DistractionButton = ButtonWidget.Cast(rootFrame.FindAnyWidget("DistractionButton"));
-        
-        // Find close button
-        m_CloseButton = ButtonWidget.Cast(rootFrame.FindAnyWidget("CloseButton"));
-        
-        // Setup event handlers for buttons
         SetupEventHandlers();
-        
-        // Initialize UI with default data
-        UpdateUI();
+        SwitchTab(0); // Initialize with Intel tab active
     }
     
-    // Tab click handlers
+    // Setup event handlers for buttons
+    protected void SetupEventHandlers()
+    {
+        // Setup tab button events
+        if (m_IntelTab)
+        {
+            SCR_InputButtonComponent inputComponent = SCR_InputButtonComponent.Cast(m_IntelTab.FindHandler(SCR_InputButtonComponent));
+            if (inputComponent)
+                inputComponent.m_OnActivated.Insert(OnIntelTabClicked);
+        }
+        
+        if (m_FactionsTab)
+        {
+            SCR_InputButtonComponent inputComponent = SCR_InputButtonComponent.Cast(m_FactionsTab.FindHandler(SCR_InputButtonComponent));
+            if (inputComponent)
+                inputComponent.m_OnActivated.Insert(OnFactionsTabClicked);
+        }
+        
+        if (m_SmuglersTab)
+        {
+            SCR_InputButtonComponent inputComponent = SCR_InputButtonComponent.Cast(m_SmuglersTab.FindHandler(SCR_InputButtonComponent));
+            if (inputComponent)
+                inputComponent.m_OnActivated.Insert(OnSmuglersTabClicked);
+        }
+        
+        // Setup exit button event
+        if (m_ButtonExit)
+        {
+            SCR_ButtonBaseComponent buttonComponent = SCR_ButtonBaseComponent.Cast(m_ButtonExit.FindHandler(SCR_ButtonBaseComponent));
+            if (buttonComponent)
+            {
+                buttonComponent.m_OnClick.Insert(OnCloseButtonClicked);
+            }
+        }
+    }
+    
+    // Tab button click handlers
     protected void OnIntelTabClicked()
     {
         SwitchTab(0);
     }
     
-    protected void OnFactionTabClicked()
+    protected void OnFactionsTabClicked()
     {
         SwitchTab(1);
     }
     
-    protected void OnSmuglerTabClicked()
+    protected void OnSmuglersTabClicked()
     {
         SwitchTab(2);
     }
@@ -150,250 +126,98 @@ class TSE_TerminalMenuWidgets
     // Switch between tabs
     protected void SwitchTab(int tabIndex)
     {
-        // Hide all content panels
-        if (m_IntelContent)
-            m_IntelContent.SetVisible(false);
-        if (m_FactionContent)
-            m_FactionContent.SetVisible(false);
-        if (m_SmuglerContent)
-            m_SmuglerContent.SetVisible(false);
+        // Hide all content layouts
+        if (m_IntelLayoutUp) m_IntelLayoutUp.SetVisible(false);
+        if (m_IntelLayoutDown) m_IntelLayoutDown.SetVisible(false);
+        if (m_FactionLayoutUp) m_FactionLayoutUp.SetVisible(false);
+        if (m_SmugglersLayoutUp) m_SmugglersLayoutUp.SetVisible(false);
+        if (m_SmugglersLayoutDown) m_SmugglersLayoutDown.SetVisible(false);
         
-        // Reset all tab button colors
-        if (m_IntelTab)
-        {
-            m_IntelTab.SetColor(Color.FromSRGBA(204, 204, 204, 255));
-            ImageWidget icon = ImageWidget.Cast(m_IntelTab.FindAnyWidget("IntelIcon"));
-            if (icon)
-                icon.SetColor(Color.FromSRGBA(204, 204, 204, 255));
-        }
-        if (m_FactionTab)
-        {
-            m_FactionTab.SetColor(Color.FromSRGBA(204, 204, 204, 255));
-            ImageWidget icon = ImageWidget.Cast(m_FactionTab.FindAnyWidget("FactionIcon"));
-            if (icon)
-                icon.SetColor(Color.FromSRGBA(204, 204, 204, 255));
-        }
-        if (m_SmuglerTab)
-        {
-            m_SmuglerTab.SetColor(Color.FromSRGBA(204, 204, 204, 255));
-            ImageWidget icon = ImageWidget.Cast(m_SmuglerTab.FindAnyWidget("SmuglerIcon"));
-            if (icon)
-                icon.SetColor(Color.FromSRGBA(204, 204, 204, 255));
-        }
-        
-        // Show selected content and highlight tab
+        // Show appropriate content based on tab
         switch (tabIndex)
         {
             case 0: // Intel
-                if (m_IntelContent)
-                    m_IntelContent.SetVisible(true);
-                if (m_IntelTab)
-                {
-                    m_IntelTab.SetColor(Color.FromSRGBA(255, 153, 0, 255));
-                    ImageWidget icon = ImageWidget.Cast(m_IntelTab.FindAnyWidget("IntelIcon"));
-                    if (icon)
-                        icon.SetColor(Color.FromSRGBA(255, 153, 0, 255));
-                }
+                if (m_IntelLayoutUp) m_IntelLayoutUp.SetVisible(true);
+                if (m_IntelLayoutDown) m_IntelLayoutDown.SetVisible(true);
+                if (m_TabIndicatorText) m_TabIndicatorText.SetText("#TSE-Terminal_Intel_Tab");
                 break;
-                
-            case 1: // Faction Info
-                if (m_FactionContent)
-                    m_FactionContent.SetVisible(true);
-                if (m_FactionTab)
-                {
-                    m_FactionTab.SetColor(Color.FromSRGBA(255, 153, 0, 255));
-                    ImageWidget icon = ImageWidget.Cast(m_FactionTab.FindAnyWidget("FactionIcon"));
-                    if (icon)
-                        icon.SetColor(Color.FromSRGBA(255, 153, 0, 255));
-                }
+            case 1: // Factions
+                if (m_FactionLayoutUp) m_FactionLayoutUp.SetVisible(true);
+                if (m_TabIndicatorText) m_TabIndicatorText.SetText("#TSE-Terminal_Faction_Tab");
                 break;
-                
-            case 2: // Smugler's Services
-                if (m_SmuglerContent)
-                    m_SmuglerContent.SetVisible(true);
-                if (m_SmuglerTab)
-                {
-                    m_SmuglerTab.SetColor(Color.FromSRGBA(255, 153, 0, 255));
-                    ImageWidget icon = ImageWidget.Cast(m_SmuglerTab.FindAnyWidget("SmuglerIcon"));
-                    if (icon)
-                        icon.SetColor(Color.FromSRGBA(255, 153, 0, 255));
-                }
+            case 2: // Smugglers
+                if (m_SmugglersLayoutUp) m_SmugglersLayoutUp.SetVisible(true);
+                if (m_SmugglersLayoutDown) m_SmugglersLayoutDown.SetVisible(true);
+                if (m_TabIndicatorText) m_TabIndicatorText.SetText("#TSE-Terminal_Smugler_Tab");
                 break;
         }
         
         m_ActiveTab = tabIndex;
+        UpdateTabImageColors(); // Update image colors after switching tabs
+    }
+    
+    protected void UpdateTabImageColors()
+    {
+        // Update Intel tab image color
+        if (m_IntelTabImage)
+        {
+            if (m_ActiveTab == 0)
+                m_IntelTabImage.SetColor(m_ActiveTabColor);
+            else
+                m_IntelTabImage.SetColor(m_InactiveTabColor);
+        }
+        
+        // Update Factions tab image color
+        if (m_FactionsTabImage)
+        {
+            if (m_ActiveTab == 1)
+                m_FactionsTabImage.SetColor(m_ActiveTabColor);
+            else
+                m_FactionsTabImage.SetColor(m_InactiveTabColor);
+        }
+        
+        // Update Smugglers tab image color
+        if (m_SmuglersTabImage)
+        {
+            if (m_ActiveTab == 2)
+                m_SmuglersTabImage.SetColor(m_ActiveTabColor);
+            else
+                m_SmuglersTabImage.SetColor(m_InactiveTabColor);
+        }
     }
     
     // Close button handler
     protected void OnCloseButtonClicked()
     {
-        if (m_RootFrame)
-            m_RootFrame.SetVisible(false);
-    }
-    
-    // Service button handlers (placeholder for future implementation)
-    protected void OnBarrageButtonClicked()
-    {
-        // TODO: Implement barrage service functionality
-        Print("Barrage service button clicked - functionality to be implemented");
-    }
-    
-    protected void OnDistractionButtonClicked()
-    {
-        // TODO: Implement distraction service functionality
-        Print("Distraction service button clicked - functionality to be implemented");
-    }
-    
-    // Update UI with current data
-    void UpdateUI()
-    {
-        // Update Intel tab
-        if (m_StabilityValue) m_StabilityValue.SetText(m_RegionStability);
-        if (m_LocationsValue) m_LocationsValue.SetText(m_AffectedLocations);
-        if (m_ResourcesValue) m_ResourcesValue.SetText(m_OccupyingResources);
-        if (m_ThreatValue) m_ThreatValue.SetText(m_ResistanceThreat);
-        if (m_PlansValue) m_PlansValue.SetText(m_FuturePlans);
-        if (m_UpdatedValue) m_UpdatedValue.SetText(m_LastUpdated);
-        if (m_DeliveryValue) m_DeliveryValue.SetText(m_NextDelivery);
         
-        // Update Faction tab
-        if (m_OFBar) m_OFBar.SetCurrent(m_OFProgress);
-        if (m_FIABar) m_FIABar.SetCurrent(m_FIAProgress);
-        if (m_SFBar) m_SFBar.SetCurrent(m_SFProgress);
-        if (m_SmuglersBar) m_SmuglersBar.SetCurrent(m_SmuglersProgress);
-        
-        // Update Smugler tab
-        if (m_WeaponsValue) m_WeaponsValue.SetText(m_AvailableWeapons);
-        if (m_VehiclesValue) m_VehiclesValue.SetText(m_AvailableVehicles);
-    }
-    
-    // Public methods for updating data (to be called from external systems)
-    void UpdateRegionStability(string stability)
-    {
-        m_RegionStability = stability;
-        if (m_StabilityValue) m_StabilityValue.SetText(stability);
-    }
-    
-    void UpdateAffectedLocations(string locations)
-    {
-        m_AffectedLocations = locations;
-        if (m_LocationsValue) m_LocationsValue.SetText(locations);
-    }
-    
-    void UpdateOccupyingResources(string resources)
-    {
-        m_OccupyingResources = resources;
-        if (m_ResourcesValue) m_ResourcesValue.SetText(resources);
-    }
-    
-    void UpdateResistanceThreat(string threat)
-    {
-        m_ResistanceThreat = threat;
-        if (m_ThreatValue) m_ThreatValue.SetText(threat);
-    }
-    
-    void UpdateFuturePlans(string plans)
-    {
-        m_FuturePlans = plans;
-        if (m_PlansValue) m_PlansValue.SetText(plans);
-    }
-    
-    void UpdateLastUpdated(string updated)
-    {
-        m_LastUpdated = updated;
-        if (m_UpdatedValue) m_UpdatedValue.SetText(updated);
-    }
-    
-    void UpdateNextDelivery(string delivery)
-    {
-        m_NextDelivery = delivery;
-        if (m_DeliveryValue) m_DeliveryValue.SetText(delivery);
-    }
-    
-    void UpdateFactionProgress(float ofProgress, float fiaProgress, float sfProgress, float smuglersProgress)
-    {
-        m_OFProgress = ofProgress;
-        m_FIAProgress = fiaProgress;
-        m_SFProgress = sfProgress;
-        m_SmuglersProgress = smuglersProgress;
-        
-        if (m_OFBar) m_OFBar.SetCurrent(ofProgress);
-        if (m_FIABar) m_FIABar.SetCurrent(fiaProgress);
-        if (m_SFBar) m_SFBar.SetCurrent(sfProgress);
-        if (m_SmuglersBar) m_SmuglersBar.SetCurrent(smuglersProgress);
-    }
-    
-    void UpdateAvailableWeapons(string weapons)
-    {
-        m_AvailableWeapons = weapons;
-        if (m_WeaponsValue) m_WeaponsValue.SetText(weapons);
-    }
-    
-    void UpdateAvailableVehicles(string vehicles)
-    {
-        m_AvailableVehicles = vehicles;
-        if (m_VehiclesValue) m_VehiclesValue.SetText(vehicles);
+        // Get the UI context and close it using CloseLayout
+        ChimeraCharacter player = ChimeraCharacter.Cast(GetGame().GetPlayerManager().GetPlayerControlledEntity(0));
+        if (player)
+        {
+            OVT_UIManagerComponent uiManager = OVT_UIManagerComponent.Cast(player.FindComponent(OVT_UIManagerComponent));
+            if (uiManager)
+            {
+                TSE_TerminalContext context = TSE_TerminalContext.Cast(uiManager.GetContextByString("OverthrowTerminalContext"));
+                if (context)
+                {
+                    context.CloseLayout();
+                }
+            }
+        }
     }
     
     // Show/hide terminal
     void ShowTerminal(bool show)
     {
         if (m_RootFrame)
+        {
             m_RootFrame.SetVisible(show);
+        }
     }
     
     // Get current active tab
     int GetActiveTab()
     {
         return m_ActiveTab;
-    }
-
-    // Setup event handlers for buttons
-    protected void SetupEventHandlers()
-    {
-        // Tab buttons
-        if (m_IntelTab)
-        {
-            SCR_InputButtonComponent action = SCR_InputButtonComponent.Cast(m_IntelTab.FindHandler(SCR_InputButtonComponent));
-            if (action)
-                action.m_OnActivated.Insert(OnIntelTabClicked);
-        }
-        
-        if (m_FactionTab)
-        {
-            SCR_InputButtonComponent action = SCR_InputButtonComponent.Cast(m_FactionTab.FindHandler(SCR_InputButtonComponent));
-            if (action)
-                action.m_OnActivated.Insert(OnFactionTabClicked);
-        }
-        
-        if (m_SmuglerTab)
-        {
-            SCR_InputButtonComponent action = SCR_InputButtonComponent.Cast(m_SmuglerTab.FindHandler(SCR_InputButtonComponent));
-            if (action)
-                action.m_OnActivated.Insert(OnSmuglerTabClicked);
-        }
-        
-        // Service buttons
-        if (m_BarrageButton)
-        {
-            SCR_InputButtonComponent action = SCR_InputButtonComponent.Cast(m_BarrageButton.FindHandler(SCR_InputButtonComponent));
-            if (action)
-                action.m_OnActivated.Insert(OnBarrageButtonClicked);
-        }
-        
-        if (m_DistractionButton)
-        {
-            SCR_InputButtonComponent action = SCR_InputButtonComponent.Cast(m_DistractionButton.FindHandler(SCR_InputButtonComponent));
-            if (action)
-                action.m_OnActivated.Insert(OnDistractionButtonClicked);
-        }
-        
-        // Close button
-        if (m_CloseButton)
-        {
-            SCR_InputButtonComponent action = SCR_InputButtonComponent.Cast(m_CloseButton.FindHandler(SCR_InputButtonComponent));
-            if (action)
-                action.m_OnActivated.Insert(OnCloseButtonClicked);
-        }
     }
 }

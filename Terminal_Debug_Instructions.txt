@@ -8,6 +8,7 @@
 1. **Отладочные сообщения** добавлены в:
    - TSE_OpenTerminalAction.c
    - TSE_TerminalContext.c
+   - TSE_TerminalMenuWidgets.c
 
 2. **Исправления в конфигурации**:
    - Добавлен m_sOpenAction "TSE_OpenTerminal" в TSE_TerminalContext
@@ -32,38 +33,53 @@
 ✅ UI менеджер найден
 ✅ Контекст терминала найден
 ✅ Layout файл исправлен (правильный формат)
-✅ Вернулись к основному layout: `{65FB1BF9F53FB057}UI/Layouts/Menu/TerminalMenu/TerminalMenu.layout`
-✅ Удалены тестовые файлы
-✅ **МЕНЮ ОТКРЫВАЕТСЯ!** - проблема была в структуре мета файла
-✅ **НАВИГАЦИЯ РАБОТАЕТ!** - левая панель с кнопками отображается правильно
-
-❌ ПРОБЛЕМА: Контейнеры сплющены или не выровнены по офсету
-
-================================
-
-ИСПРАВЛЕНИЯ LAYOUT (ОСНОВНЫЕ):
-
-1. **Добавлены тексты на кнопки** - теперь кнопки показывают "Intel", "Faction Info", "Smugler's services"
-2. **Исправлена кнопка закрытия** - теперь красная с текстом "X"
-3. **Улучшено позиционирование** - исправлены отступы и размеры
+✅ **НОВЫЙ LAYOUT ПОДКЛЮЧЕН**: `{2563056570B97039}UI/Layouts/Menu/TerminalMenu/TerminalMenu_new.layout`
+✅ **ВИДЖЕТЫ ОБНОВЛЕНЫ** для работы с новым layout
+✅ **СИСТЕМА ПЕРЕКЛЮЧЕНИЯ ВКЛАДОК** реализована
+✅ **КНОПКА ЗАКРЫТИЯ** работает
+✅ **ОШИБКИ КОМПИЛЯЦИИ ИСПРАВЛЕНЫ** - убраны несуществующие методы
+✅ **КУРСОР ОТЛАДКА** - добавлена принудительная активация и отладка контекста
 
 ================================
 
-ИСПРАВЛЕНИЯ LAYOUT (КРИТИЧЕСКИЕ):
+НОВЫЙ LAYOUT СТРУКТУРА:
 
-4. **Исправлен ContentPanel** - заменили LayoutSlot на FrameWidgetSlot с правильными размерами
-5. **Исправлена NavigationPanel** - задали фиксированную ширину 200px
-6. **Исправлены кнопки** - заменили LayoutSlot на FrameWidgetSlot с правильными позициями
-7. **Увеличены иконки** - с 20x20 до 24x24 пикселей
+1. **MainWindow** - главное окно терминала (964x600 пикселей)
+2. **Верхняя панель** - кнопка закрытия, статус подключения, индикатор вкладки
+3. **Три кнопки вкладок** - Tab_Intel, Tab_Factions, Tab_Smuglers
+4. **Контент вкладок**:
+   - **Intel**: Intel_Layout_Up + Intel_Layout_Down
+   - **Factions**: Faction_Layout_Up
+   - **Smuglers**: Smugglers_Layout_Up + Smugglers_Layout_Down
 
 ================================
 
-ИСПРАВЛЕНИЯ LAYOUT (КОНТЕНТ):
+РЕАЛИЗОВАННАЯ ФУНКЦИОНАЛЬНОСТЬ:
 
-8. **Исправлены контейнеры контента** - заменили LayoutSlot на FrameWidgetSlot с правильными размерами
-9. **Добавлен контент для Intel** - стабильность региона, локации, ресурсы, угрозы, планы
-10. **Добавлен контент для Faction Info** - уровень фракции, репутация, активные участники
-11. **Добавлен контент для Smuggler's services** - услуги артиллерии и отвлечения, информация
+1. **Переключение вкладок** - работает через SetVisible(true/false)
+2. **Кнопка закрытия** - закрывает контекст через context.OnClose()
+3. **Индикатор вкладки** - обновляет Text0 в InfoLayout
+4. **Отладочные сообщения** - подробное логирование всех действий
+5. **Курсор отладка** - принудительная активация контекста в OnShow
+
+================================
+
+ИСПРАВЛЕННЫЕ ОШИБКИ КОМПИЛЯЦИИ:
+
+1. **Убраны несуществующие методы** из TSE_TerminalContext.c:
+   - UpdateRegionStability, UpdateAffectedLocations, UpdateOccupyingResources
+   - UpdateResistanceThreat, UpdateFuturePlans, UpdateLastUpdated
+   - UpdateNextDelivery, UpdateFactionProgress, UpdateAvailableWeapons, UpdateAvailableVehicles
+
+2. **Исправлен вызов закрытия контекста** в TSE_TerminalMenuWidgets.c:
+   - Используется правильный способ получения UI менеджера через OVT_UIManagerComponent
+   - Используется context.OnClose() вместо context.Close()
+
+3. **Добавлена отладка курсора** в TSE_TerminalContext.c:
+   - Переопределен метод ShowLayout для отладки создания UI
+   - Добавлена принудительная активация контекста в OnShow
+   - Добавлена отладка в OnActiveFrame (каждую секунду)
+   - Убраны спам логи для производительности
 
 ================================
 
@@ -79,17 +95,41 @@
    - [TSE_OpenTerminalAction] PerformAction called
    - [TSE_OpenTerminalAction] UI manager found
    - [TSE_OpenTerminalAction] Terminal context found
+   - [TSE_TerminalContext] ShowLayout called
+   - [TSE_TerminalContext] Creating widgets from layout
+   - [TSE_TerminalContext] Enabling context
+   - [TSE_TerminalContext] Calling OnShow
+   - [TSE_TerminalContext] ShowLayout completed
    - [TSE_TerminalContext] OnShow called
-   - [TSE_TerminalContext] Creating new terminal widgets
-   - [TSE_TerminalContext] Initializing widgets with root frame
+   - [TSE_TerminalContext] Forced cursor activation for context: OverthrowTerminalContext
+   - [TSE_TerminalMenuWidgets] InitializeWidgets called
+   - [TSE_TerminalMenuWidgets] Widgets found - IntelTab: true, FactionsTab: true, SmuglersTab: true
+   - [TSE_TerminalMenuWidgets] Close button found: true
+   - [TSE_TerminalMenuWidgets] Tab indicator found: true
+   - [TSE_TerminalMenuWidgets] Setting up event handlers
+   - [TSE_TerminalMenuWidgets] Intel tab handler set
+   - [TSE_TerminalMenuWidgets] Factions tab handler set
+   - [TSE_TerminalMenuWidgets] Smuglers tab handler set
+   - [TSE_TerminalMenuWidgets] Close button handler set
+   - [TSE_TerminalMenuWidgets] Switching to tab: 0
+   - [TSE_TerminalMenuWidgets] Tab switched successfully
+   - [TSE_TerminalContext] OnActiveFrame - Context active: true, Context name: OverthrowTerminalContext (каждую секунду)
 
 5. **Проверить UI** - должна появиться панель с:
-   - Левая панель навигации шириной 200px с тремя кнопками
-   - Правая панель контента с информацией:
-     - **Intel**: стабильность региона, локации, ресурсы, угрозы, планы
-     - **Faction Info**: уровень фракции, репутация, участники
-     - **Smuggler's services**: услуги с кнопками "Request"
-   - Красной кнопкой закрытия "X" в правом верхнем углу
+   - Левая панель навигации с тремя кнопками вкладок
+   - Правая панель контента с информацией Intel
+   - Красной кнопкой закрытия в правом верхнем углу
+   - Индикатором "Intel tab" в верхней панели
+   - **КУРСОРОМ** - должен появиться курсор мыши
+
+6. **Тестирование переключения**:
+   - Нажать на "Factions tab" - должен показаться контент фракций
+   - Нажать на "Smuglers tab" - должен показаться контент контрабандистов
+   - Нажать на "Intel tab" - должен вернуться к Intel контенту
+   - Индикатор в верхней панели должен обновляться
+
+7. **Тестирование закрытия**:
+   - Нажать на красную кнопку закрытия - терминал должен закрыться
 
 ================================
 
@@ -100,12 +140,16 @@
 3. **Кнопка закрытия не видна** - исправлено позиционирование и добавлен текст
 4. **Пустые столбики** - исправлены размеры панелей и контейнеров
 5. **Контент не отображается** - исправлены размеры контейнеров контента
+6. **Вкладки не переключаются** - проверьте отладочные сообщения в консоли
+7. **Кнопка закрытия не работает** - проверьте имя контекста "OverthrowTerminalContext"
+8. **Ошибки компиляции** - исправлены, убраны несуществующие методы
+9. **Курсор не появляется** - проверьте отладочные сообщения о контексте и активации
 
 ================================
 
 СЛЕДУЮЩИЕ ШАГИ:
 
-1. Запустить игру и протестировать с исправленным layout
-2. Если UI выглядит правильно - отлично! UI готов
-3. Если есть проблемы с выравниванием - дополнительно настроить позиционирование
-4. Реализовать переключение между вкладками 
+1. Запустить игру и протестировать с новым layout
+2. Если UI выглядит правильно и переключение работает - отлично!
+3. Если есть проблемы - проверить отладочные сообщения в консоли
+4. В будущем - добавить заполнение данных в виджеты 

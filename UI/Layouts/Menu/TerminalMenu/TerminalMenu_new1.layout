@@ -1,0 +1,1278 @@
+FrameWidgetClass "{66049578C95D7D7F}" {
+ Name "rootFrame"
+ {
+  OverlayWidgetClass "{66049578C95D7D7D}" {
+   Name "Overlay0"
+   Slot FrameWidgetSlot "{6602FBC9C74613E7}" {
+    Anchor 0.25 0.2 0.25 0.2
+    PositionX 0
+    OffsetLeft 0
+    PositionY 0
+    OffsetTop 0
+    SizeX 964
+    OffsetRight -964
+    SizeY 600
+    OffsetBottom -600
+   }
+   {
+    FrameWidgetClass "{66049578C95D7D7A}" {
+     Name "MainWindow"
+     Slot OverlayWidgetSlot "{6602FBC9E6DF606C}" {
+     }
+     {
+      ImageWidgetClass "{66049578C95D7D78}" {
+       Name "BackgroundUpper"
+       Slot FrameWidgetSlot "{660295A486868A1D}" {
+        PositionX 1
+        OffsetLeft 1
+        PositionY 1
+        OffsetTop 1
+        SizeX 949
+        OffsetRight -950
+        SizeY 55.8
+        OffsetBottom -56.8
+       }
+       Clipping False
+       Color 0.1451 0.1451 0.1451 1
+      }
+      VerticalLayoutWidgetClass "{66049578C95D7D79}" {
+       Name "VerticalLayout"
+       Slot FrameWidgetSlot "{66028E6E94E1C922}" {
+        Anchor 0 0 0 0
+        PositionX 0
+        OffsetLeft 0
+        PositionY 0
+        OffsetTop 0
+        SizeX 949
+        OffsetRight -949
+        SizeY 57.8
+        OffsetBottom -57.8
+       }
+       Clipping False
+       {
+        HorizontalLayoutWidgetClass "{66049578C95D7D77}" {
+         Name "UpperBar"
+         Slot LayoutSlot "{66028E6E314518B7}" {
+          Padding 0 5.9 0 0
+         }
+         {
+          ButtonWidgetClass "{66049578C95D7D74}" {
+           Name "ButtonExit"
+           Slot LayoutSlot "{660295A8F78E8537}" {
+           }
+           Color 0 0 0 1
+           components {
+            SCR_InputButtonComponent "{6604957AEF094823}" {
+            }
+           }
+           style blank
+           {
+            ImageWidgetClass "{66049578C95D7D75}" {
+             Name "Imageglow"
+             Slot ButtonWidgetSlot "{660295A8121D2B78}" {
+             }
+             Color 0.749 0.1882 0.1882 1
+             Texture "{10EF34D280D6338D}UI/Textures/Icons/icons_gamepad/icons_gamepad_playstation.imageset"
+             Image "button"
+             Size 48 48
+            }
+           }
+          }
+          VerticalLayoutWidgetClass "{66049578C95DDFB6}" {
+           Name "InfoLayout"
+           Slot LayoutSlot "{660295A9A7FB10D8}" {
+            Padding 10.9 8.9 15 0
+           }
+           {
+            TextWidgetClass "{66049578C95DDFB0}" {
+             Name "Text1"
+             Slot LayoutSlot "{660295A9FF83D71E}" {
+             }
+             Text "Terminal is connected"
+             "Font Size" 16
+             "Min Font Size" 12
+             FontProperties FontProperties "{660295A9F50A3A65}" {
+              Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+              Bold 1
+             }
+            }
+            TextWidgetClass "{66049578C95A320A}" {
+             Name "Text0"
+             Slot LayoutSlot "{660295A9FDA5D0F8}" {
+              Padding 2 1 0 0
+             }
+             Color 0.6353 0.6353 0.6353 1
+             Text "Intel tab"
+             "Font Size" 14
+             "Min Font Size" 14
+             FontProperties FontProperties "{660295A9E86AC0EC}" {
+              Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+              Bold 1
+             }
+            }
+           }
+          }
+          HorizontalLayoutWidgetClass "{66049578C95A3209}" {
+           Name "Tabs_buttons"
+           Slot LayoutSlot "{66029588F2DF6AAF}" {
+            Padding 0 8.8 0 0
+           }
+           {
+            FrameWidgetClass "{66049578C95A3208}" {
+             Name "Intel_Frame_Button"
+             Slot LayoutSlot "{660295AF9D0C0FF9}" {
+             }
+             {
+              ButtonWidgetClass "{66049578C95A2F11}" {
+               Name "Tab_Intel"
+               Slot FrameWidgetSlot "{660295AF9F4C547D}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 201
+                OffsetRight -201
+                OffsetBottom -30
+               }
+               Color 0.1098 0.302 0.8745 1
+               "Inherit Color" 1
+               components {
+                SCR_InputButtonComponent "{6604957A059DC6D3}" {
+                }
+               }
+               style blank
+              }
+              ImageWidgetClass "{66049578C95A2F0E}" {
+               Name "Image0"
+               Slot FrameWidgetSlot "{660295AF836F58E1}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 200
+                OffsetRight -200
+                OffsetBottom -30
+               }
+               IsPixelPerfect 0
+               Color 0.2627 0.2627 0.2627 1
+               Size 64 32
+              }
+              PanelWidgetClass "{66049578C95A2F0C}" {
+               Name "Panel0"
+               Slot FrameWidgetSlot "{660295AFDC2E8661}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 201
+                OffsetRight -201
+                SizeY 31.5
+                OffsetBottom -31.5
+               }
+               style pixel_corners
+              }
+              TextWidgetClass "{66049578C95A9123}" {
+               Name "IntelTab_Text"
+               Slot FrameWidgetSlot "{660295A1FFD38F1D}" {
+                Anchor 0 0 0 0
+                PositionX 50.6
+                OffsetLeft 50.6
+                PositionY 1.8
+                OffsetTop 1.8
+                SizeX 151.4
+                OffsetRight -202
+                SizeY 30
+                OffsetBottom -31.8
+               }
+               Text "Intel tab"
+               FontProperties FontProperties "{660295A16D6016EF}" {
+                Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+               }
+              }
+             }
+            }
+            FrameWidgetClass "{66049578C95A9122}" {
+             Name "Factions_Frame_Button0"
+             Slot LayoutSlot "{660295AF9D0C0FF9}" {
+             }
+             {
+              ButtonWidgetClass "{66049578C95A8146}" {
+               Name "Tab_Factions"
+               Slot FrameWidgetSlot "{660295AF9F4C547D}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 201
+                OffsetRight -201
+                OffsetBottom -30
+               }
+               Color 0.1098 0.302 0.8745 1
+               "Inherit Color" 1
+               components {
+                SCR_InputButtonComponent "{66049579ABA69EC4}" {
+                }
+               }
+               style blank
+              }
+              ImageWidgetClass "{66049578C95A8141}" {
+               Name "Image0"
+               Slot FrameWidgetSlot "{660295AF836F58E1}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 200
+                OffsetRight -200
+                OffsetBottom -30
+               }
+               IsPixelPerfect 0
+               Color 0.1686 0.1686 0.1686 1
+               Size 64 32
+              }
+              PanelWidgetClass "{66049578C95A8140}" {
+               Name "Panel0"
+               Slot FrameWidgetSlot "{660295AFDC2E8661}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 201
+                OffsetRight -201
+                SizeY 31.5
+                OffsetBottom -31.5
+               }
+               style pixel_corners
+              }
+              TextWidgetClass "{66049578C95AF5B2}" {
+               Name "FactionsTab_Text"
+               Slot FrameWidgetSlot "{660295A1FFD38F1D}" {
+                Anchor 0 0 0 0
+                PositionX 25.5
+                OffsetLeft 25.5
+                PositionY 1.8
+                OffsetTop 1.8
+                SizeX 174.5
+                OffsetRight -200
+                SizeY 30
+                OffsetBottom -31.8
+               }
+               Text "Factions tab"
+               FontProperties FontProperties "{660295A16D6016EF}" {
+                Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+               }
+              }
+             }
+            }
+            FrameWidgetClass "{66049578C95AF5B1}" {
+             Name "Smugler_Frame_Button1"
+             Slot LayoutSlot "{660295AF9D0C0FF9}" {
+             }
+             {
+              ButtonWidgetClass "{66049578C95AF5B0}" {
+               Name "Tab_Smuglers"
+               Slot FrameWidgetSlot "{660295AF9F4C547D}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 201
+                OffsetRight -201
+                OffsetBottom -30
+               }
+               Color 0.1098 0.302 0.8745 1
+               "Inherit Color" 1
+               components {
+                SCR_InputButtonComponent "{66049579A1BE5C05}" {
+                }
+               }
+               style blank
+              }
+              ImageWidgetClass "{66049578C95AF5BF}" {
+               Name "Image0"
+               Slot FrameWidgetSlot "{660295AF836F58E1}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 200
+                OffsetRight -200
+                OffsetBottom -30
+               }
+               IsPixelPerfect 0
+               Color 0.1686 0.1686 0.1686 1
+               Size 64 32
+              }
+              PanelWidgetClass "{66049578C95AE4E6}" {
+               Name "Panel0"
+               Slot FrameWidgetSlot "{660295AFDC2E8661}" {
+                OffsetLeft 0
+                OffsetTop 0
+                SizeX 201
+                OffsetRight -201
+                SizeY 31.5
+                OffsetBottom -31.5
+               }
+               style pixel_corners
+              }
+              TextWidgetClass "{66049578C95AE4E7}" {
+               Name "SmuglerTab_Text"
+               Slot FrameWidgetSlot "{660295A1FFD38F1D}" {
+                Anchor 0 0 0 0
+                PositionX 25.5
+                OffsetLeft 25.5
+                PositionY 1.8
+                OffsetTop 1.8
+                SizeX 174.5
+                OffsetRight -200
+                SizeY 30
+                OffsetBottom -31.8
+               }
+               Text "Smuglers tab"
+               FontProperties FontProperties "{660295A16D6016EF}" {
+                Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+        ImageWidgetClass "{66049578C95B2C93}" {
+         Name "UpperStripe"
+         Slot LayoutSlot "{56EEDE07C9F827C2}" {
+         }
+         Color 0.9956 0.9956 0.9956 1
+         Image ""
+         Size 167.5 3
+        }
+        VerticalLayoutWidgetClass "{66049578C95B2C90}" {
+         Name "MainBar"
+         Slot LayoutSlot "{66028E6E5F88CD3E}" {
+         }
+         "Z Order" 100
+         Clipping False
+         {
+          SizeLayoutWidgetClass "{66049578C95B2C91}" {
+           Name "Intel_Layout_Up"
+           Slot LayoutSlot "{660295B966666358}" {
+            Padding 0 1 0 0
+           }
+           "Z Order" 100
+           Clipping False
+           AllowWidthOverride 1
+           WidthOverride 12.5
+           AllowHeightOverride 1
+           HeightOverride 415.2
+           AspectRatioForce 0
+           {
+            VerticalLayoutWidgetClass "{66049578C95B4C01}" {
+             Name "Intel_Layout Vertical"
+             Slot AlignableSlot "{660295B57A35FF8B}" {
+              HorizontalAlign 0
+              VerticalAlign 0
+              Padding 15 10 0 0
+             }
+             "Z Order" 100
+             Clipping False
+             {
+              VerticalLayoutWidgetClass "{66049578C95B4C06}" {
+               Name "RegionLayout_Vertical"
+               Slot LayoutSlot "{65FE7303495FC2D2}" {
+               }
+               {
+                HorizontalLayoutWidgetClass "{66049578C95B4C07}" {
+                 Name "RegionLayout_1"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                 {
+                  TextWidgetClass "{66049578C95B4C04}" {
+                   Name "RegionStability"
+                   Slot LayoutSlot "{65FE730298627BFC}" {
+                    Padding 0 0 0 5
+                   }
+                   Text "Region Stability: "
+                   "Font Size" 36
+                   "Min Font Size" 4
+                   FontProperties FontProperties "{65FE73606FA81FA6}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C95B667A}" {
+                   Name "RegionStability_status"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   "Font Size" 36
+                   FontProperties FontProperties "{65FE7360668BF09F}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                 }
+                }
+                HorizontalLayoutWidgetClass "{66049578C95B667B}" {
+                 Name "RegionLayout_0"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                 {
+                  TextWidgetClass "{66049578C95BD244}" {
+                   Name "CityStatus"
+                   Slot LayoutSlot "{65FE730298627BFC}" {
+                   }
+                   Text "Our people suffer in"
+                   FontProperties FontProperties "{65FE73639DC6C904}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C95BD2BB}" {
+                   Name "City_Name_0"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   FontProperties FontProperties "{65FE736393438B2C}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C95BD2BA}" {
+                   Name "City_Name_1"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   FontProperties FontProperties "{65FE73638919F4FF}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C95BE44C}" {
+                   Name "City_Name_2"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   FontProperties FontProperties "{65FE73638D188E94}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                 }
+                }
+               }
+              }
+              TextWidgetClass "{66049578C95BE44F}" {
+               Name "Text0"
+               Slot LayoutSlot "{6602958B2B9011F9}" {
+               }
+               Text "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+               "Font Size" 20
+               "Min Font Size" 10
+              }
+              VerticalLayoutWidgetClass "{66049578C9580818}" {
+               Name "OFInfo"
+               Slot LayoutSlot "{65FE731C0FDD9123}" {
+               }
+               {
+                HorizontalLayoutWidgetClass "{66049578C9580819}" {
+                 Name "OFResourses"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                 {
+                  TextWidgetClass "{66049578C958081E}" {
+                   Name "OFResources_text"
+                   Slot LayoutSlot "{65FE730298627BFC}" {
+                   }
+                   Text "Ocupying Faction Resourses:"
+                   FontProperties FontProperties "{65FE736384F90948}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C9584D06}" {
+                   Name "OFResources_status"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   FontProperties FontProperties "{65FE736386DE1CBF}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                 }
+                }
+                HorizontalLayoutWidgetClass "{66049578C9586B2F}" {
+                 Name "ResistanceThreat"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                 {
+                  TextWidgetClass "{66049578C9586B2E}" {
+                   Name "ResistanceThreat_text"
+                   Slot LayoutSlot "{65FE730298627BFC}" {
+                   }
+                   Text "Resistance Threat Level:"
+                   FontProperties FontProperties "{65FE7363BB589700}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C9586B2D}" {
+                   Name "ResistanceThreat_status"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   FontProperties FontProperties "{65FE7363BE0CD3BB}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                 }
+                }
+                HorizontalLayoutWidgetClass "{66049578C958D70C}" {
+                 Name "OFPlans"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                 {
+                  TextWidgetClass "{66049578C958D70D}" {
+                   Name "OFPlans_text"
+                   Slot LayoutSlot "{65FE730298627BFC}" {
+                   }
+                   Text "Future Plans:"
+                   FontProperties FontProperties "{65FE7363AAA79AEB}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C958C0C0}" {
+                   Name "OFPlans_status"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   FontProperties FontProperties "{65FE7363AD1E037B}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                 }
+                }
+                HorizontalLayoutWidgetClass "{66049578C958C0CF}" {
+                 Name "OFLastUpdate"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                 {
+                  TextWidgetClass "{66049578C958C0CE}" {
+                   Name "OFLastUpdate_text"
+                   Slot LayoutSlot "{65FE730298627BFC}" {
+                   }
+                   Text "Last updated"
+                   FontProperties FontProperties "{65FE7363A153224A}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C959299D}" {
+                   Name "OFLastUpdate_status"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   FontProperties FontProperties "{65FE7363A45DF71C}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+          SizeLayoutWidgetClass "{66049578C959299E}" {
+           Name "Intel_Layout_Down"
+           Slot LayoutSlot "{660295B966666358}" {
+            Padding 0 1 0 0
+           }
+           "Z Order" 100
+           Clipping False
+           AllowWidthOverride 1
+           WidthOverride 12.5
+           AllowHeightOverride 1
+           HeightOverride 75.7
+           AspectRatioForce 0
+           {
+            VerticalLayoutWidgetClass "{66049578C9595322}" {
+             Name "Intel_Layout Vertical"
+             Slot AlignableSlot "{660295B57A35FF8B}" {
+              HorizontalAlign 0
+              VerticalAlign 0
+              Padding 15 10 0 0
+             }
+             "Z Order" 100
+             Clipping False
+             {
+              VerticalLayoutWidgetClass "{66049578C9595323}" {
+               Name "RegionLayout_Vertical"
+               Slot LayoutSlot "{65FE7303495FC2D2}" {
+               }
+               {
+                HorizontalLayoutWidgetClass "{66049578C95941BE}" {
+                 Name "RegionLayout_1"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                 {
+                  TextWidgetClass "{66049578C95941B9}" {
+                   Name "AirDrop_Text"
+                   Slot LayoutSlot "{65FE730298627BFC}" {
+                    Padding 0 0 0 5
+                   }
+                   Text "Next Supporting Faction delivery in:"
+                   "Font Size" 36
+                   "Min Font Size" 4
+                   FontProperties FontProperties "{65FE73606FA81FA6}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                  TextWidgetClass "{66049578C95941B8}" {
+                   Name "AirDrop_Time"
+                   Slot LayoutSlot "{65FE730367E69A15}" {
+                    Padding 20 0 0 0
+                   }
+                   Text "-"
+                   "Font Size" 36
+                   FontProperties FontProperties "{65FE7360668BF09F}" {
+                    Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                    Bold 1
+                   }
+                  }
+                 }
+                }
+               }
+              }
+              VerticalLayoutWidgetClass "{66049578C95942D6}" {
+               Name "OFInfo"
+               Slot LayoutSlot "{65FE731C0FDD9123}" {
+               }
+               {
+                HorizontalLayoutWidgetClass "{66049578C95942D5}" {
+                 Name "OFResourses"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                }
+                HorizontalLayoutWidgetClass "{66049578C959B254}" {
+                 Name "ResistanceThreat"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                }
+                HorizontalLayoutWidgetClass "{66049578C959B255}" {
+                 Name "OFPlans"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                }
+                HorizontalLayoutWidgetClass "{66049578C959F75B}" {
+                 Name "OFLastUpdate"
+                 Slot LayoutSlot "{65FE730337A4897A}" {
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+          SizeLayoutWidgetClass "{66049578C959F744}" {
+           Name "Faction_Layout_Up"
+           Slot LayoutSlot "{660295B966666358}" {
+            Padding 0 1 0 0
+           }
+           "Z Order" 100
+           "Is Visible" 0
+           AllowWidthOverride 1
+           WidthOverride 12.5
+           AllowHeightOverride 1
+           HeightOverride 415.2
+           AspectRatioForce 0
+           {
+            OverlayWidgetClass "{66049578C959F745}" {
+             Name "DetailContent"
+             Slot AlignableSlot "{6602958EFEFC90C1}" {
+              HorizontalAlign 3
+              VerticalAlign 0
+             }
+             {
+              VerticalLayoutWidgetClass "{66049578C966546C}" {
+               Name "DetailContentLayout"
+               Slot OverlayWidgetSlot "{598EF9F5311402ED}" {
+                HorizontalAlign 3
+                VerticalAlign 3
+               }
+               {
+                VerticalLayoutWidgetClass "{66049578C966546F}" {
+                 Name "OFLevelVerticalLayot"
+                 Slot LayoutSlot "{65FE7303495FC2D2}" {
+                  Padding 0 5 0 0
+                 }
+                 {
+                  HorizontalLayoutWidgetClass "{66049578C96671B8}" {
+                   Name "OFLevelText"
+                   Slot LayoutSlot "{65FE730337A4897A}" {
+                    Padding 0 0 0 5
+                   }
+                   {
+                    TextWidgetClass "{66049578C96671B9}" {
+                     Name "OFLevelInfoText"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 10 0 0 0
+                     }
+                     Text "Ocupation Forces strentgh:"
+                     "Min Font Size" 24
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                      Bold 1
+                     }
+                    }
+                   }
+                  }
+                  HorizontalLayoutWidgetClass "{66049578C96671BE}" {
+                   Name "OFLevels"
+                   Slot LayoutSlot "{660295A5CA335585}" {
+                   }
+                   {
+                    ImageWidgetClass "{66049578C966A0D7}" {
+                     Name "ProgressVolumeOver"
+                     Slot LayoutSlot "{660295A5CA335589}" {
+                      Padding 5 0 5 0
+                     }
+                     "Is Enabled" 0
+                     Color 0.2549 0.2025 0.1339 1
+                     Size 0 20
+                    }
+                    OverlayWidgetClass "{66049578C966A0D6}" {
+                     Name "OFLevel2Bar"
+                     Slot LayoutSlot "{660295A5CA33557D}" {
+                      HorizontalAlign 3
+                      SizeMode Fill
+                     }
+                     {
+                      ProgressBarWidgetClass "{66049578C966A0D5}" {
+                       Name "ProgressBarOFLevel2"
+                       Slot OverlayWidgetSlot "{660295A5CA335554}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       Color 0.7686 0.6824 0.2588 1
+                       style SimpleWithBackground
+                       Current 100
+                      }
+                      PanelWidgetClass "{66049578C966D20D}" {
+                       Name "Outline"
+                       Slot OverlayWidgetSlot "{660295A5CA33554B}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       style pixel_corners
+                      }
+                     }
+                    }
+                    OverlayWidgetClass "{66049578C96723F5}" {
+                     Name "OFLevel3Bar"
+                     Slot LayoutSlot "{65FE731BEE7A6B5A}" {
+                      Padding 0 0 5 0
+                      SizeMode Fill
+                     }
+                     {
+                      ProgressBarWidgetClass "{66049578C96723F4}" {
+                       Name "ProgressBarOFLevel3"
+                       Slot OverlayWidgetSlot "{65FE731BEE7A6B23}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       Color 0.7137 0.3216 0.298 1
+                       style SimpleWithBackground
+                      }
+                      PanelWidgetClass "{66049578C96723FB}" {
+                       Name "Outline"
+                       Slot OverlayWidgetSlot "{65FE731BEE7A6CE1}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       style pixel_frame
+                      }
+                     }
+                    }
+                   }
+                  }
+                  HorizontalLayoutWidgetClass "{66049578C9678B5D}" {
+                   Name "OFLevelExp"
+                   Slot LayoutSlot "{65FE730337A4897A}" {
+                    Padding 0 0 0 5
+                   }
+                   {
+                    TextWidgetClass "{66049578C9678B5C}" {
+                     Name "OFLevel2Info"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 10 5 0 0
+                     }
+                     Text "Level 2: More patrols. Vehicles Tier 2. Can use mortars in combat."
+                     "Font Size" 14
+                     "Min Font Size" 10
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                     }
+                    }
+                    TextWidgetClass "{66049578C96412DF}" {
+                     Name "OFLevel3nfo"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 45 5 0 0
+                     }
+                     Text "Level 3: Extrime patrols. Vehicles Tier 3.  Spec Ops."
+                     "Font Size" 14
+                     "Min Font Size" 10
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+                VerticalLayoutWidgetClass "{66049578C96412DC}" {
+                 Name "FIALevelVerticalLayot"
+                 Slot LayoutSlot "{65FE7303495FC2D2}" {
+                  Padding 0 5 0 0
+                 }
+                 {
+                  HorizontalLayoutWidgetClass "{66049578C96412DD}" {
+                   Name "FIALevelText"
+                   Slot LayoutSlot "{65FE730337A4897A}" {
+                    Padding 0 0 0 5
+                   }
+                   {
+                    TextWidgetClass "{66049578C9643608}" {
+                     Name "FIALevelInfoText"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 10 0 0 0
+                     }
+                     Text "Resistance strentgh:"
+                     "Min Font Size" 24
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                      Bold 1
+                     }
+                    }
+                   }
+                  }
+                  HorizontalLayoutWidgetClass "{66049578C964360F}" {
+                   Name "FIALevels"
+                   Slot LayoutSlot "{660295A5CA335585}" {
+                   }
+                   {
+                    ImageWidgetClass "{66049578C96464AD}" {
+                     Name "ProgressVolumeOver"
+                     Slot LayoutSlot "{660295A5CA335589}" {
+                      Padding 5 0 5 0
+                     }
+                     "Is Enabled" 0
+                     Color 0.2549 0.2025 0.1339 1
+                     Size 0 20
+                    }
+                    OverlayWidgetClass "{66049578C96464AC}" {
+                     Name "FIALevel2Bar"
+                     Slot LayoutSlot "{660295A5CA33557D}" {
+                      HorizontalAlign 3
+                      SizeMode Fill
+                     }
+                     {
+                      ProgressBarWidgetClass "{66049578C964ACB3}" {
+                       Name "ProgressBarOFLevel2"
+                       Slot OverlayWidgetSlot "{660295A5CA335554}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       Color 0.7686 0.6824 0.2588 1
+                       style SimpleWithBackground
+                       Current 100
+                      }
+                      PanelWidgetClass "{66049578C964ACB0}" {
+                       Name "Outline"
+                       Slot OverlayWidgetSlot "{660295A5CA33554B}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       style pixel_corners
+                      }
+                     }
+                    }
+                    OverlayWidgetClass "{66049578C9650657}" {
+                     Name "FIALevel3Bar"
+                     Slot LayoutSlot "{65FE731BEE7A6B5A}" {
+                      Padding 0 0 5 0
+                      SizeMode Fill
+                     }
+                     {
+                      ProgressBarWidgetClass "{66049578C9650656}" {
+                       Name "ProgressBarOFLevel3"
+                       Slot OverlayWidgetSlot "{65FE731BEE7A6B23}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       Color 0.7137 0.3216 0.298 1
+                       style SimpleWithBackground
+                      }
+                      PanelWidgetClass "{66049578C9650669}" {
+                       Name "Outline"
+                       Slot OverlayWidgetSlot "{65FE731BEE7A6CE1}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       style pixel_frame
+                      }
+                     }
+                    }
+                   }
+                  }
+                  HorizontalLayoutWidgetClass "{66049578C96556E8}" {
+                   Name "FIALevelExp"
+                   Slot LayoutSlot "{65FE730337A4897A}" {
+                    Padding 0 0 0 5
+                   }
+                   {
+                    TextWidgetClass "{66049578C96556E9}" {
+                     Name "FIALevel2Info"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 10 5 0 0
+                     }
+                     Text "Level 2: Access to Resource System. "
+                     "Font Size" 14
+                     "Min Font Size" 10
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                     }
+                    }
+                    TextWidgetClass "{66049578C9654BB5}" {
+                     Name "FIALevel3nfo"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 233 5 0 0
+                     }
+                     Text "Level 3: Access to supply depots in build menu."
+                     "Font Size" 14
+                     "Min Font Size" 10
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+                VerticalLayoutWidgetClass "{66049578C9654BB6}" {
+                 Name "SFLevelVerticalLayot"
+                 Slot LayoutSlot "{65FE7303495FC2D2}" {
+                  Padding 0 5 0 0
+                 }
+                 {
+                  HorizontalLayoutWidgetClass "{66049578C965A5D9}" {
+                   Name "SFLevelText"
+                   Slot LayoutSlot "{65FE730337A4897A}" {
+                    Padding 0 0 0 5
+                   }
+                   {
+                    TextWidgetClass "{66049578C965A5D8}" {
+                     Name "SFLevelInfoText"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 10 0 0 0
+                     }
+                     Text "Support Faction strentgh:"
+                     "Min Font Size" 24
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                      Bold 1
+                     }
+                    }
+                   }
+                  }
+                  HorizontalLayoutWidgetClass "{66049578C965AA94}" {
+                   Name "SFLevels"
+                   Slot LayoutSlot "{660295A5CA335585}" {
+                   }
+                   {
+                    ImageWidgetClass "{66049578C965AA93}" {
+                     Name "ProgressVolumeOver"
+                     Slot LayoutSlot "{660295A5CA335589}" {
+                      Padding 5 0 5 0
+                     }
+                     "Is Enabled" 0
+                     Color 0.2549 0.2025 0.1339 1
+                     Size 0 20
+                    }
+                    OverlayWidgetClass "{66049578C965EBD6}" {
+                     Name "SFLevel2Bar"
+                     Slot LayoutSlot "{660295A5CA33557D}" {
+                      HorizontalAlign 3
+                      Padding 0 0 5 0
+                      SizeMode Fill
+                     }
+                     {
+                      ProgressBarWidgetClass "{66049578C965EBD7}" {
+                       Name "ProgressBarOFLevel2"
+                       Slot OverlayWidgetSlot "{660295A5CA335554}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       Color 0.1882 0.3294 0.749 1
+                       style SimpleWithBackground
+                       Current 100
+                      }
+                      PanelWidgetClass "{66049578C9621D49}" {
+                       Name "Outline"
+                       Slot OverlayWidgetSlot "{660295A5CA33554B}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       style pixel_corners
+                      }
+                     }
+                    }
+                   }
+                  }
+                  HorizontalLayoutWidgetClass "{66049578C9621D4A}" {
+                   Name "SFLevelExp"
+                   Slot LayoutSlot "{65FE730337A4897A}" {
+                    Padding 0 0 0 5
+                   }
+                   {
+                    TextWidgetClass "{66049578C9623C4F}" {
+                     Name "SFLevel2Info"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 10 5 0 0
+                     }
+                     Text "Once the supply faction is ready, the invasion will occur. Be careful, as their intentions may not be so obvious!"
+                     "Font Size" 14
+                     "Min Font Size" 10
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+                VerticalLayoutWidgetClass "{66049578C9623C4E}" {
+                 Name "SMGLevelVerticalLayot"
+                 Slot LayoutSlot "{65FE7303495FC2D2}" {
+                  Padding 0 5 0 0
+                 }
+                 {
+                  HorizontalLayoutWidgetClass "{66049578C962B8EC}" {
+                   Name "SMGLevelText"
+                   Slot LayoutSlot "{65FE730337A4897A}" {
+                    Padding 0 0 0 5
+                   }
+                   {
+                    TextWidgetClass "{66049578C962B8E3}" {
+                     Name "SMGLevelInfoText"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 10 0 0 0
+                     }
+                     Text "Smuggler strentgh:"
+                     "Min Font Size" 24
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                      Bold 1
+                     }
+                    }
+                   }
+                  }
+                  HorizontalLayoutWidgetClass "{66049578C962D00E}" {
+                   Name "SMGLevels"
+                   Slot LayoutSlot "{660295A5CA335585}" {
+                   }
+                   {
+                    ImageWidgetClass "{66049578C962D00F}" {
+                     Name "ProgressVolumeOver"
+                     Slot LayoutSlot "{660295A5CA335589}" {
+                      Padding 5 0 5 0
+                     }
+                     "Is Enabled" 0
+                     Color 0.2549 0.2025 0.1339 1
+                     Size 0 20
+                    }
+                    OverlayWidgetClass "{66049578C9631365}" {
+                     Name "SMGLevel2Bar"
+                     Slot LayoutSlot "{660295A5CA33557D}" {
+                      HorizontalAlign 3
+                      SizeMode Fill
+                     }
+                     {
+                      ProgressBarWidgetClass "{66049578C9631366}" {
+                       Name "ProgressBarOFLevel2"
+                       Slot OverlayWidgetSlot "{660295A5CA335554}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       Color 0.1882 0.3294 0.749 1
+                       style SimpleWithBackground
+                       Current 100
+                      }
+                      PanelWidgetClass "{66049578C9631367}" {
+                       Name "Outline"
+                       Slot OverlayWidgetSlot "{660295A5CA33554B}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       style pixel_corners
+                      }
+                     }
+                    }
+                    OverlayWidgetClass "{66049578C9632877}" {
+                     Name "SMGLevel3Bar"
+                     Slot LayoutSlot "{660295A5CA33557D}" {
+                      HorizontalAlign 3
+                      Padding 0 0 5 0
+                      SizeMode Fill
+                     }
+                     {
+                      ProgressBarWidgetClass "{66049578C9632870}" {
+                       Name "ProgressBarOFLevel3"
+                       Slot OverlayWidgetSlot "{660295A5CA335554}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       Color 0.1882 0.3294 0.749 1
+                       style SimpleWithBackground
+                       Current 100
+                      }
+                      PanelWidgetClass "{66049578C9638A52}" {
+                       Name "Outline"
+                       Slot OverlayWidgetSlot "{660295A5CA33554B}" {
+                        HorizontalAlign 3
+                        VerticalAlign 3
+                       }
+                       style pixel_corners
+                      }
+                     }
+                    }
+                   }
+                  }
+                  HorizontalLayoutWidgetClass "{66049578C9638A53}" {
+                   Name "SMGLevelExp"
+                   Slot LayoutSlot "{65FE730337A4897A}" {
+                    Padding 0 0 0 5
+                   }
+                   {
+                    TextWidgetClass "{66049578C963B0C6}" {
+                     Name "SMGLevel2Info"
+                     Slot LayoutSlot "{65FE730298627BFC}" {
+                      Padding 10 5 0 0
+                     }
+                     Text "The more influence smugglers have, the better their services are and the greater the range of products available to arms dealers."
+                     "Font Size" 14
+                     "Min Font Size" 10
+                     FontProperties FontProperties "{65FE736721CFA38A}" {
+                      Font "{D3E75BCBECEB273E}UI/Fonts/NotoSans/NotoSans-Enhanced-Regular-JP-KOR-SC-LAT.fnt"
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+          SizeLayoutWidgetClass "{66049578C963B0C5}" {
+           Name "Smugglers_Layout_Up"
+           Slot LayoutSlot "{660295B966666358}" {
+            Padding 0 1 0 0
+           }
+           "Z Order" 100
+           "Is Visible" 0
+           Clipping False
+           AllowWidthOverride 1
+           WidthOverride 12.5
+           AllowHeightOverride 1
+           HeightOverride 415.2
+           AspectRatioForce 0
+          }
+          SizeLayoutWidgetClass "{66049578C963F308}" {
+           Name "Smugglers_Layout_Down"
+           Slot LayoutSlot "{660295B966666358}" {
+            Padding 0 1 0 0
+           }
+           "Z Order" 100
+           "Is Visible" 0
+           Clipping False
+           AllowWidthOverride 1
+           WidthOverride 12.5
+           AllowHeightOverride 1
+           HeightOverride 75.7
+           AspectRatioForce 0
+          }
+         }
+        }
+       }
+      }
+      ImageWidgetClass "{66049578C963F309}" {
+       Name "BackgroundMid"
+       Slot FrameWidgetSlot "{660295A486868A1D}" {
+        Anchor 0.35 0.45 0.35 0.45
+        PositionX -336.4
+        OffsetLeft -336.4
+        PositionY -215.1
+        OffsetTop -215.1
+        SizeX 953.9
+        OffsetRight -617.5
+        SizeY 434.9
+        OffsetBottom -219.8
+       }
+       "Z Order" -100
+       Color 0.0706 0.0706 0.0706 1
+      }
+      ImageWidgetClass "{66049578C9605079}" {
+       Name "LowerStripe"
+       Slot FrameWidgetSlot "{660295BBA8CE8E50}" {
+        PositionX 0
+        OffsetLeft 0
+        PositionY 475
+        OffsetTop 475
+        SizeX 950
+        OffsetRight -950
+        SizeY 2
+        OffsetBottom -477
+       }
+       Color 0.9956 0.9956 0.9956 1
+       Image ""
+       Size 167.5 3
+      }
+      ImageWidgetClass "{66049578C9605066}" {
+       Name "BackgroundLower"
+       Slot FrameWidgetSlot "{660295A486868A1D}" {
+        Anchor 0 0.05 0 0.05
+        PositionX 1
+        OffsetLeft 1
+        PositionY 447.7
+        OffsetTop 447.7
+        SizeX 949
+        OffsetRight -950
+        SizeY 92.3
+        OffsetBottom -540
+       }
+       "Z Order" -100
+       Color 0.1451 0.1451 0.1451 1
+      }
+      PanelWidgetClass "{66049578C960A607}" {
+       Name "Panel0"
+       Slot FrameWidgetSlot "{660295AFDC2E8661}" {
+        PositionX 0
+        OffsetLeft 0
+        PositionY 0
+        OffsetTop 0
+        SizeX 950
+        OffsetRight -950
+        SizeY 570
+        OffsetBottom -570
+       }
+       style pixel_corners
+      }
+     }
+    }
+   }
+  }
+ }
+}

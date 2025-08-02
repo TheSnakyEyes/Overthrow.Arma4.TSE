@@ -151,10 +151,10 @@ SCR_ChimeraCharacter : "{7A9EE19AB67B298B}Prefabs/Characters/Factions/INDFOR/FIA
      m_sCloseAction "MenuBack"
      m_bOpenActionCloses 0
     }
-    TSE_TerminalContext "{TSE_Terminal_Context_New}" {
-     m_Layout "{65FB1BF9F53FB057}UI/Layouts/Menu/TerminalMenu/TerminalMenu.layout"
-     m_sContextName "TSETerminalContextNew"
-     m_sOpenAction "TSE_OpenTerminal"
+    TSE_TerminalContext "{66048B144A5C9FB9}" {
+     m_Layout "{2563056570B97039}UI/Layouts/Menu/TerminalMenu/TerminalMenu_new.layout"
+     m_sContextName "OverthrowTerminalContext"
+     m_sOpenAction "TseTerminal"
      m_sCloseAction "MenuBack"
      m_bOpenActionCloses 0
      m_bHideHUDOnShow 1
