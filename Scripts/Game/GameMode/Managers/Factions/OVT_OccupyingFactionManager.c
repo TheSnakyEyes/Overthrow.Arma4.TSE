@@ -234,7 +234,8 @@ class OVT_OccupyingFactionManager: OVT_Component
 		GetGame().GetCallqueue().CallLater(CheckRadioTowers, 9000, true, GetOwner());
 
 		if(m_bDistributeInitial)
-			GetGame().GetCallqueue().CallLater(DistributeInitialResources, 5000);
+			// Delay initial resource distribution by 2 minutes to ensure proper proxying after world initialization
+			GetGame().GetCallqueue().CallLater(DistributeInitialResources, 120000);
 	}
 
 	void CheckRadioTowers()
@@ -452,7 +453,7 @@ class OVT_OccupyingFactionManager: OVT_Component
 
 	protected void DistributeInitialResources()
 	{
-		//Distribute initial resources with forced proxying to prevent immediate spawning		
+		//Distribute initial resources with forced proxying after 2-minute delay to prevent immediate spawning during world initialization
 		foreach(OVT_BaseData data : m_Bases)
 		{
 			OVT_BaseControllerComponent base = GetBase(data.entId);
