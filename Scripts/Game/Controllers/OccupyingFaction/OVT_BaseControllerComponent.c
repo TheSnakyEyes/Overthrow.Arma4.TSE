@@ -310,6 +310,27 @@ class OVT_BaseControllerComponent: OVT_Component
 
 		return spent;
 	}
+	
+	//! Spend resources with forced proxying for initial resource distribution
+	int SpendResourcesWithForcedProxying(int resources, float threat = 0)
+	{
+		// Set force proxying flag for all upgrades
+		foreach(OVT_BaseUpgrade upgrade : m_aBaseUpgrades)
+		{
+			upgrade.m_bForceProxying = true;
+		}
+		
+		// Spend resources normally (but with forced proxying)
+		int spent = SpendResources(resources, threat);
+		
+		// Clear force proxying flag for all upgrades
+		foreach(OVT_BaseUpgrade upgrade : m_aBaseUpgrades)
+		{
+			upgrade.m_bForceProxying = false;
+		}
+		
+		return spent;
+	}
 
 	IEntity GetNearestSlot(vector pos)
 	{

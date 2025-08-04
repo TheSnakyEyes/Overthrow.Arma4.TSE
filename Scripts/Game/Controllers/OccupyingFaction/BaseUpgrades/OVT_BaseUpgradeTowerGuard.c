@@ -91,7 +91,8 @@ class OVT_BaseUpgradeTowerGuard : OVT_BasePatrolUpgrade
 			}
 			if(needsGuard)
 			{
-				if(!PlayerInRange()){
+				// Always proxy during initialization/deserialization or when player not in range
+				if(ShouldForceProxying() || !PlayerInRange()){
 					m_iProxedResources += OVT_Global.GetConfig().m_Difficulty.baseResourceCost;
 					spent += OVT_Global.GetConfig().m_Difficulty.baseResourceCost;
 				}else{

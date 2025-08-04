@@ -66,7 +66,9 @@ class OVT_BaseUpgradeDefensePosition : OVT_BasePatrolUpgrade
 			if(needsGuard)
 			{
 				spawnCount--;
-				if(!PlayerInRange()){
+				
+				// Always proxy during initialization/deserialization or when player not in range
+				if(ShouldForceProxying() || !PlayerInRange()){
 					m_iProxedResources += OVT_Global.GetConfig().m_Difficulty.baseResourceCost * 4;
 					spent += OVT_Global.GetConfig().m_Difficulty.baseResourceCost * 4;
 				}else{

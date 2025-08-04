@@ -452,13 +452,13 @@ class OVT_OccupyingFactionManager: OVT_Component
 
 	protected void DistributeInitialResources()
 	{
-		//Distribute initial resources		
+		//Distribute initial resources with forced proxying to prevent immediate spawning		
 		foreach(OVT_BaseData data : m_Bases)
 		{
 			OVT_BaseControllerComponent base = GetBase(data.entId);
 			int toSpend = Math.Floor(m_Config.m_Difficulty.startingResources * base.m_fStartingResourcesMultiplier);
-			Print("[Overthrow.OccupyingFactionManager] Distributing " + toSpend.ToString() + " resources to " + base.m_sName);
-			base.SpendResources(toSpend, m_iThreat);
+			Print("[Overthrow.OccupyingFactionManager] Distributing " + toSpend.ToString() + " resources to " + base.m_sName + " (with forced proxying)");
+			base.SpendResourcesWithForcedProxying(toSpend, m_iThreat);
 		}
 		UpdateSpecops();	
 	}

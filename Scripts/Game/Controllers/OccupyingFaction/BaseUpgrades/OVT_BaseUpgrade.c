@@ -8,6 +8,9 @@ class OVT_BaseUpgrade : ScriptAndConfig
 	
 	[Attribute(defvalue: "0", UIWidgets.EditBox, desc: "Minimum threat level to appear")]
 	int m_iMinimumThreat;
+	
+	// New flag to force proxying during initialization
+	bool m_bForceProxying = false;
 		
 	OVT_BaseControllerComponent m_BaseController;
 	OVT_OccupyingFactionManager m_occupyingFactionManager;
@@ -69,8 +72,18 @@ class OVT_BaseUpgrade : ScriptAndConfig
 	bool Deserialize(OVT_BaseUpgradeData struct)
 	{
 		if(!m_BaseController.IsOccupyingFaction()) return true;
+		
+		// Set force proxying flag during deserialization to prevent immediate spawning
+		m_bForceProxying = true;
 		Spend(struct.resources, m_iMinimumThreat);
+		m_bForceProxying = false;
 		
 		return true;
+	}
+	
+	// Helper method to check if we should force proxying
+	protected bool ShouldForceProxying()
+	{
+		return m_bForceProxying;
 	}
 }
